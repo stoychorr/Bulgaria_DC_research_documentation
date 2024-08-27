@@ -1,0 +1,153 @@
+---
+title: "research_documentation"
+author: "Stoycho Rusinov"
+format: html
+editor: visual
+---
+
+Prepare the data from excel:
+
+```{r}
+options(warn=-1)
+library(readxl)
+data_stop_isty <- read_excel("G:/My Drive/конференция/data stop isty.xlsx")
+head(data_stop_isty)
+```
+
+Fit the model:
+
+$$
+\Delta Z'_t = \alpha_0 + \alpha_1 \cdot \frac{\Delta \text{Compensation}_t}{\text{Compensation}_{t-1}} + \alpha_2 \cdot \Delta Z_t + \alpha_3 \cdot \frac{\text{Fixed\_Capital}_t}{\text{Fixed\_Capital}_{t-1}} + \varepsilon_t
+$$
+
+
+where $\Delta Z_t=\frac{\Delta \mathrm{Hired}_t}{\mathrm{Hired}_{t-1}}-\frac{\Delta \mathrm{Hired}_{t-4}}{\mathrm{Hired}_{t-5}}$ и $\Delta Z'_t=\frac{\Delta \mathrm{GDP}_t}{\mathrm{GDP}_{t-1}}-\frac{\Delta \mathrm{GDP}_{t-4}}{\mathrm{GDP}_{t-5}}$, which we perform to remove the temporal and cyclic dependencies in the data. 
+
+
+```{r}
+# Load necessary library
+library(dplyr)
+# Create the differenced variable with NA padding for alignment
+data_stop_isty$diff_Hired_lag4 <- c(rep(NA, 4), diff(data_stop_isty$Hired, lag = 4))
+data_stop_isty$diff_GDP <- c(rep(NA, 4), diff(data_stop_isty$GDP, lag = 4))
+#Load the main OLS model
+
+model1<-lm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty[,-c(1,4,5,6,9)])
+summary(model1)
+predicted_values<-predict(model1, data=data_stop_isty)
+```
+The graph of the differenced GDP is: 
+```{r}
+options(warn=-1)
+plot(seq(1:111),data_stop_isty$diff_GDP, type="l", title="Изменения на диференцираното БВП с два и четири лагови стойности.", xlab="Период в тримесечия", ylab="Изменения в БВП")
+```
+
+Perform ADF tests on the all variables to insure they fit the requirements of AR(4) model and are stationary:
+
+```{r}
+options(warn=-1)
+library(tseries)
+adf.test(data_stop_isty$Compensation_of_Employees )
+adf.test(data_stop_isty$Consumption_of_Fixed_Capital)
+diff_Hired_lag4<-na.omit(data_stop_isty)
+diff_Hired_lag4<-diff_Hired_lag4$diff_Hired_lag4
+adf.test(diff_Hired_lag4)
+rm(diff_Hired_lag4)
+```
+
+Perform tests for heteroscedasticity, and DW test on residuals to insure they fit the axioms of linear regression and then print the autocorrelogram:
+
+```{r}
+options(warn=-1)
+library(lmtest)
+dwtest(model1)
+bptest(model1)
+acf(model1$residuals, main="Автокорелограма на остатъчните грешки в линейната регресия")
+```
+
+Fit robust regression model for comparison:
+
+```{r}
+options(warn=-1)
+library(MASS)
+data_stop_isty<-na.omit(data_stop_isty[,-c(1,4,5,6,9)])
+# Fit the robust regression model
+robust_model <- rlm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty)
+
+# View the summary of the robust regression model
+summary(robust_model)
+predicted_values_RM <- predict(robust_model, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
+
+SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
+SSE <- sum((data_stop_isty$diff_GDP - predicted_values_RM)^2)
+r_squared <- 1 - (SSE / SST)
+print(r_squared)
+```
+
+Fit the quantile regression model for comparison:
+
+```{r}
+options(warn=-1)
+library(quantreg)
+
+# Fit the quantile regression model
+quantile_model <- rq(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, tau = 0.5)  # median (50th percentile)
+
+# View the summary of the quantile regression model
+summary(quantile_model)
+predicted_values_QR <- predict(quantile_model, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
+
+SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
+SSE <- sum((data_stop_isty$diff_GDP - predicted_values_QR)^2)
+r_squared <- 1 - (SSE / SST)
+print(r_squared)
+```
+
+Fit a general linear model to use the maximum likelihood estimator instead of OLS for comparison.
+
+```{r}
+options(warn=-1)
+library(dplyr)
+library(glmmTMB)
+# Fit the model using glmmTMB
+model_general_lenear <- glmmTMB(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, 
+                 family = gaussian())
+summary(model_general_lenear)
+predicted_values_GLM <- predict(model_general_lenear, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
+SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
+SSE <- sum((data_stop_isty$diff_GDP - predicted_values_GLM)^2)
+r_squared <- 1 - (SSE / SST)
+print(r_squared)
+```
+
+
+```{r}
+# Create a plot for predicted values
+plot(
+  predicted_values, 
+  type = "l", 
+  col = "purple", 
+  xlab = "Index", 
+  ylab = "Values", 
+  main = "Predicted vs Actual Values"
+)
+# Add the actual values to the same plot
+lines(
+  data_stop_isty$diff_GDP, 
+  col = "red"
+)
+
+
+# Add a legend to differentiate between predicted and actual values
+legend(
+  "topright", 
+  legend = c("Predicted Values GLM&LM", "Actual Values"), 
+  col = c("purple","blue", "red"), 
+  lty = 1
+)
+
+
+```
+
+
+
