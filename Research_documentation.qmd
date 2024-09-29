@@ -1,68 +1,157 @@
 ---
-title: "research_documentation"
+title: "The Impact of Demographic Changes on Economic Growth in Bulgaria (Research documentation)"
 author: "Stoycho Rusinov"
 format: html
 editor: visual
 ---
+
+## Abstract
+
+This study examines the demographic crisis in Bulgaria as a critical barrier to economic growth. By analyzing data from the past century, based on the Bulgarian Statistical Yearbook, we investigate the impact of demographic changes on Gross Domestic Product (GDP), capital, and its efficiency. An econometric evaluation of the factors influencing GDP is conducted using data spanning a broad time range to highlight the economic processes that have stimulated growth across three different political regimes in Bulgaria's history.
+
+The results indicate that, until the end of the socialist period, demographic growth was not the primary driver of economic progress due to the inefficient utilization of labor resources. However, following the transition, human capital began to play a decisive role in GDP dynamics, surpassing even gross capital investments. This shift raises a critical question: Can the declining population slow GDP growth to the extent that it triggers a recession and transforms the demographic crisis into a significant macroeconomic problem?
+
+# Bulgaria after 1989 (Modern Bulgaria)
 
 Prepare the data from excel:
 
 ```{r}
 options(warn=-1)
 library(readxl)
-data_stop_isty <- read_excel("G:/My Drive/конференция/data stop isty.xlsx")
+data_stop_isty <- read_excel("data stop isty.xlsx", 
+    col_types = c("text", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric"))
 head(data_stop_isty)
+```
+
+Provide descriptive statistics of the data:
+
+```{r}
+psych::describe(data_stop_isty)
 ```
 
 Fit the model:
 
 $$
-\Delta Z'_t = \alpha_0 + \alpha_1 \cdot \frac{\Delta \text{Compensation}_t}{\text{Compensation}_{t-1}} + \alpha_2 \cdot \Delta Z_t + \alpha_3 \cdot \frac{\text{Fixed\_Capital}_t}{\text{Fixed\_Capital}_{t-1}} + \varepsilon_t
+\Delta Z'_t = \alpha_0 + \alpha_1 \cdot \frac{\Delta \text{Compensation}_t}{\text{Compensation}_{t-1}} + \alpha_2 \cdot \Delta Z_t + \alpha_3 \cdot \frac{\text{Fixed\_Capital}_t}{\text{Fixed\_Capital}_{t-1}} +\text{shock1}_t+\text{shock2}_t+ \varepsilon_t
 $$
 
-
-where $\Delta Z_t=\frac{\Delta \mathrm{Hired}_t}{\mathrm{Hired}_{t-1}}-\frac{\Delta \mathrm{Hired}_{t-4}}{\mathrm{Hired}_{t-5}}$ и $\Delta Z'_t=\frac{\Delta \mathrm{GDP}_t}{\mathrm{GDP}_{t-1}}-\frac{\Delta \mathrm{GDP}_{t-4}}{\mathrm{GDP}_{t-5}}$, which we perform to remove the temporal and cyclic dependencies in the data. 
-
+where $\Delta Z_t=\frac{\Delta \mathrm{Hired}_t}{\mathrm{Hired}_{t-1}}-\frac{\Delta \mathrm{Hired}_{t-4}}{\mathrm{Hired}_{t-5}}$ и $\Delta Z'_t=\frac{\Delta \mathrm{GDP}_t}{\mathrm{GDP}_{t-1}}-\frac{\Delta \mathrm{GDP}_{t-4}}{\mathrm{GDP}_{t-5}}$, which we perform to remove the temporal and cyclic dependencies in the data.
 
 ```{r}
 # Load necessary library
 library(dplyr)
+library(stargazer)
 # Create the differenced variable with NA padding for alignment
 data_stop_isty$diff_Hired_lag4 <- c(rep(NA, 4), diff(data_stop_isty$Hired, lag = 4))
 data_stop_isty$diff_GDP <- c(rep(NA, 4), diff(data_stop_isty$GDP, lag = 4))
 #Load the main OLS model
-
-model1<-lm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty[,-c(1,4,5,6,9)])
-summary(model1)
-predicted_values<-predict(model1, data=data_stop_isty)
+time<-array()
+i<-0
+while (i<=110){
+  if (i<=19){
+    time[i]<-1
+  } else {time[i]=0}
+  i<-i+1
+}
+time2<-array()
+i <- 0
+while (i <= 110) {
+  if (i > 55 && i < 60) {
+    time2[i] <- 1
+  } else {
+    time2[i] <- 0
+  }
+  i <- i + 1
+}
+model1_nohetero<-lm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty[,-c(1,4,5,6,9)])
+model1_hetero<-lm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4+time+time2, data=data_stop_isty[,-c(1,4,5,6,9)])
+library(sandwich)
+robust_se <- vcovHC(model1_hetero, type = "HC")
+# Use robust standard errors in model summaries
+library(lmtest)
+coeftest(model1_hetero, vcov = robust_se)
 ```
-The graph of the differenced GDP is: 
+
+The graph of the differenced GDP is:
+
 ```{r}
 options(warn=-1)
-plot(seq(1:111),data_stop_isty$diff_GDP, type="l", title="Изменения на диференцираното БВП с два и четири лагови стойности.", xlab="Период в тримесечия", ylab="Изменения в БВП")
+plot(seq(1:110),data_stop_isty$diff_GDP, type="l", main="Изменения на диференцираното БВП с два и четири лагови стойности.", xlab="Период в тримесечия", ylab="Изменения в БВП")
 ```
 
-Perform ADF tests on the all variables to insure they fit the requirements of AR(4) model and are stationary:
+Perform ADF tests on the all variables to insure they fit the requirements of the Granger test and linear regression modelling (so are statinary):
 
 ```{r}
-options(warn=-1)
+suppressWarnings({
 library(tseries)
-adf.test(data_stop_isty$Compensation_of_Employees )
-adf.test(data_stop_isty$Consumption_of_Fixed_Capital)
-diff_Hired_lag4<-na.omit(data_stop_isty)
-diff_Hired_lag4<-diff_Hired_lag4$diff_Hired_lag4
-adf.test(diff_Hired_lag4)
-rm(diff_Hired_lag4)
+
+columns_to_test <- c("Compensation_of_Employees", "Consumption_of_Fixed_Capital", "diff_Hired_lag4")
+
+adf_results <- list()
+
+for (col in columns_to_test) {
+  data_to_test <- na.omit(data_stop_isty[[col]])
+  adf_results[[col]] <- adf.test(data_to_test)
+}
+
+# Extract ADF statistic, p-value, and other results
+for (col in columns_to_test) {
+  cat("Results for:", col, "\n")
+  cat("ADF Test Statistic:", adf_results[[col]]$statistic, "\n")
+  cat("P-value:", adf_results[[col]]$p.value, "\n")
+  cat("Alternative Hypothesis:", adf_results[[col]]$alternative, "\n")
+  cat("-----------------------------\n")
+}
+
+rm(data_to_test)
+})
 ```
 
-Perform tests for heteroscedasticity, and DW test on residuals to insure they fit the axioms of linear regression and then print the autocorrelogram:
+Due to the low $R^2$ we will perform the RESET test to check for omitted variables:
+
+```{r}
+suppressMessages({
+library(lmtest)
+resettest(model1_nohetero, power=2:3)})
+```
+
+Perform tests for heteroscedasticity, and DW test on residuals to insure they fit the axioms of linear regression and then print the auto correlation table:
 
 ```{r}
 options(warn=-1)
 library(lmtest)
-dwtest(model1)
-bptest(model1)
-acf(model1$residuals, main="Автокорелограма на остатъчните грешки в линейната регресия")
+dwtest(model1_nohetero)
+bptest(model1_nohetero, studentize = TRUE)
+acf(model1_hetero$residuals, main="Автокорелограма на остатъчните грешки в линейната регресия")
+```
+
+No autocorrelation was detected, as evidenced by the autocorrelation table, which shows that the structure of the lagged error terms is adequate for further reliability assurance. However, due to the model's low predictive power, the Breusch-Pagan (BP) test suggests the presence of heteroscedasticity in the error terms, which is expected. To meet the package requirements for other regression models, we need to adjust the lengths of the dummy variables accordinglly, we do this by utilizing a while woop, to construct a dummy variable:
+
+```{r}
+rm(time)
+rm(time2)
+time<-array()
+time2<-array()
+i=0
+while (i<=106){
+  if (i<=19){
+    time[i]=1
+  } else {time[i]=0}
+  i=i+1
+}
+time2<-array()
+i <- 1
+while (i <= 106) {
+  if (i > 55 && i < 60) {
+    time2[i] <- 1
+  } else {
+    time2[i] <- 0
+  }
+  i <- i + 1
+}
 ```
 
 Fit robust regression model for comparison:
@@ -72,82 +161,478 @@ options(warn=-1)
 library(MASS)
 data_stop_isty<-na.omit(data_stop_isty[,-c(1,4,5,6,9)])
 # Fit the robust regression model
-robust_model <- rlm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty)
-
-# View the summary of the robust regression model
-summary(robust_model)
+robust_model <- rlm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, method="M")
+robust_model2 <- rlm(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, method="MM")
 predicted_values_RM <- predict(robust_model, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
-
+predicted_values_RM2 <- predict(robust_model2, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
 SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
 SSE <- sum((data_stop_isty$diff_GDP - predicted_values_RM)^2)
 r_squared <- 1 - (SSE / SST)
-print(r_squared)
+print(paste("R_ squared=",round(r_squared,2)))
+SSE <- sum((data_stop_isty$diff_GDP - predicted_values_RM2)^2)
+r_squared <- 1 - (SSE / SST)
+print(paste("R_ squared=",round(r_squared,2)))
+stargazer::stargazer(robust_model, robust_model2, type="text")
 ```
 
-Fit the quantile regression model for comparison:
+Perform the BP-test for heteroscedasticity:
 
 ```{r}
-options(warn=-1)
-library(quantreg)
-
-# Fit the quantile regression model
-quantile_model <- rq(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, tau = 0.5)  # median (50th percentile)
-
-# View the summary of the quantile regression model
-summary(quantile_model)
-predicted_values_QR <- predict(quantile_model, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
-
-SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
-SSE <- sum((data_stop_isty$diff_GDP - predicted_values_QR)^2)
-r_squared <- 1 - (SSE / SST)
-print(r_squared)
+lmtest::bptest(robust_model)
 ```
 
 Fit a general linear model to use the maximum likelihood estimator instead of OLS for comparison.
 
 ```{r}
-options(warn=-1)
+
+options(warn = -1)
 library(dplyr)
-library(glmmTMB)
+library(stargazer)
+
 # Fit the model using glmmTMB
-model_general_lenear <- glmmTMB(diff_GDP~Compensation_of_Employees+Consumption_of_Fixed_Capital+diff_Hired_lag4, data=data_stop_isty, 
-                 family = gaussian())
-summary(model_general_lenear)
+model_general_lenear <- glm(diff_GDP ~ Compensation_of_Employees + Consumption_of_Fixed_Capital + diff_Hired_lag4 , 
+                                data = data_stop_isty, family = gaussian())
+
 predicted_values_GLM <- predict(model_general_lenear, newdata = na.omit(data_stop_isty[, -c(1, 4, 5, 6, 9)]))
+
+#calculate r squared manually and then print the result
+
 SST <- sum((data_stop_isty$diff_GDP - mean(data_stop_isty$diff_GDP))^2)
 SSE <- sum((data_stop_isty$diff_GDP - predicted_values_GLM)^2)
 r_squared <- 1 - (SSE / SST)
-print(r_squared)
+print(paste0("R squared is = ", round(r_squared, digits = 2)))
+stargazer::stargazer(model_general_lenear, type="text")
+AIC(model_general_lenear)
 ```
 
+We will perform tests for heteroscedasticity and autocorrelation of the residuals for the glm to access the reliability of this model:
+
+```{r}
+bptest(model_general_lenear)
+dwtest(model_general_lenear)
+shapiro.test(model_general_lenear$residuals)
+```
+
+Based on the QQ plot, the residuals of the model appear to be approximately normal with the exception of some slight deviations in the tails of the distribution:
+
+```{r}
+qqnorm(model_general_lenear$residuals)
+qqline(model_general_lenear$residuals, col = "blue")
+```
+
+Since the pseudo r-squared is quite low in the gaussian model and the robust model, we can perform the Generalized additive model, with splain functions of the following type: $$
+S(x) = 
+\begin{cases} 
+a_1 + b_1(x - x_1) + c_1(x - x_1)^2 + d_1(x - x_1)^3 & \text{for } x_1 \leq x < x_2 \\
+a_2 + b_2(x - x_2) + c_2(x - x_2)^2 + d_2(x - x_2)^3 & \text{for } x_2 \leq x < x_3 \\
+\vdots \\
+a_n + b_n(x - x_n) + c_n(x - x_n)^2 + d_n(x - x_n)^3 & \text{for } x_{n-1} \leq x \leq x_n
+\end{cases}
+$$ To determine whether there are significant non-linear realtionships in the data, that are measured with "wigly" curves. The general form of GAM with splain is given by: $$
+S(x)=\sum_{i=1}^N\alpha_i\phi_i(x)
+$$ Where $\alpha_i$ are the coefficients of the spline and $\phi_i$ are the basis functions. The approximation of such model will insure that the non-linear relationships in the, if any, are adequately captured by the model. The leftover unexplained variance will be attributed to factors outside the scope of this approximation.
+
+```{r fig.height=20, fig.width=20}
+# Load the package
+library(mgcv)
+
+# Generalized Additive Model
+model_gam <- gam(diff_GDP ~ s(Compensation_of_Employees) + 
+                           s(Consumption_of_Fixed_Capital) + 
+                           s(diff_Hired_lag4), 
+                 data = data_stop_isty, family = gaussian())
+summary(model_gam)
+
+plot(model_gam, pages = 1)
+AIC(model_gam)
+```
+
+We provide a plot of the components of this gamma model:
+
+```{r}
+plot(model_gam)
+```
+
+Now, we will derive the relative deviance explained by each parameter in the GAM model:
+
+```{r}
+compensation<- gam(diff_GDP ~ s(Compensation_of_Employees), 
+                 data = data_stop_isty, family = gaussian())
+employees<-gam(diff_GDP ~ s(diff_Hired_lag4), 
+                 data = data_stop_isty, family = gaussian())
+capital<-gam(diff_GDP ~ s(Consumption_of_Fixed_Capital), 
+                 data = data_stop_isty, family = gaussian())
+cat("Deviance explained by the relative change in employed compensation:", summary(compensation)$dev.expl,"\n")
+cat("Deviance explained by relative change in employed:",summary(employees)$dev.expl, "\n")
+cat("Deviance explained by relative change in employed:",summary(capital)$dev.expl, "\n")
+#Create a vector of fitted values for this model to compare with the real data
+predicted_values_GAM<-model_gam$fitted.values
+```
+
+From we can easily observe that the relative change of the employed persons explaines higher percentage of the deviance in GDP.
 
 ```{r}
 # Create a plot for predicted values
 plot(
-  predicted_values, 
+  predicted_values_GAM, 
   type = "l", 
-  col = "purple", 
-  xlab = "Index", 
-  ylab = "Values", 
-  main = "Predicted vs Actual Values"
+  col = "blue", 
+  xlab = "Месеци след 1995 година", 
+  ylab = "Отн. изменения", 
+  main = "Прогнозирани vs. реални стойности в измененията на БВП"
 )
 # Add the actual values to the same plot
 lines(
   data_stop_isty$diff_GDP, 
-  col = "red"
+  col = "black"
 )
 
 
 # Add a legend to differentiate between predicted and actual values
 legend(
   "topright", 
-  legend = c("Predicted Values GLM&LM", "Actual Values"), 
-  col = c("purple","blue", "red"), 
+  legend = c("Прогноза (GAM)", "Реални стойности"), 
+  col = c("blue", "black"), 
   lty = 1
 )
 
+```
+
+Upon the statistical realization of the second mentioned in the beggining of the research paper we will mention the augmented Solow model, by beginning with the initial definition of the production function in the main Solow model: $$
+Y=A\cdot F(K,Z\cdot N)
+$$ Where $N$ is the number of workers employed in the economy and Z is their productivity. $K$ represents the capital accumulation. Except for the technological progress every other parameter in the above equation is defined in a series of equatins: $$
+K_t=I_t+(1-\delta)\cdot K_{t-1},
+$$ $$
+𝑁_𝑡=(1+𝑛)\cdot 𝑁_{𝑡−1},
+$$ $$
+𝑍_𝑡=(1+𝜔) \cdot 𝑍_{𝑡−1}
+$$ In this model, the parameter \$ \omega \$ denotes the rate of improvement in labor productivity over time. The model posits that technological progress is continuously advancing, thereby amplifying the impact of the population parameter on GDP development. Specifically, \$ \omega \$ captures the rate at which labor productivity enhances, reflecting ongoing technological advancements.The parameter \$ n \$ represents the rate of population growth. While \$ n \$ typically increases, it is projected to decline in Bulgaria due to the ongoing demographic crisis. This demographic shift alters the conventional expectations regarding population dynamics and their influence on GDP growth. For the purposes of this approximation we will assume that the combined term $(1+𝜔)(1+𝑛)\cdot 𝑍_{𝑡−1}𝑁_{𝑡−1}$ is identically equal to the working population (employed + self-employed). We as well assume that the quantity $K_t=I_t+(1-\delta)\cdot K_{t-1}$ is equal to the "brute capital investments" as refered to by the National Statics institute.From here we have the following form of the equation: $$
+Y(K_t,L_t)=AK_t^\alpha L_t^\beta
+$$ The log form of the equation above is given by: $$
+\ln (Y_t)=\ln(A)+\alpha\cdot\ln(K_t)+\beta\cdot\ln(L_t)
+$$ Given the model specification, there may be issues related to the potential lack of stationarity and the presence of autocorrelation in the residuals of the regression model. To address these concerns, it is essential to examine whether the time series data for the variables in the model exhibit non-stationary behavior or if the residuals are auto-correlated.
+
+Non-stationarity can lead to unreliable estimates and misleading inferences, while autocorrelation in residuals can indicate that the model does not fully capture the dynamics of the data.
+
+To correct for these issues, we can apply the disintegration method. This approach involves transforming the variables to obtain their relative changes, which helps to mitigate problems associated with non-stationarity and autocorrelation. By focusing on the relative changes, we can enhance the robustness of the regression analysis and obtain more reliable estimates.To do this take the difference $\Delta$ on both sides of the last equation: $$
+\Delta \underbrace{\ln (Y_t)}_{\ln\left(\frac{Y_t}{Y_{t-1}}\right)} = \ln(A)-\ln(A)+\alpha\cdot (\underbrace{\ln(K_t)-\ln(K_{t-1})}_{\ln\left(\frac{K_t}{K_{t-1}}\right)})+\beta\cdot(\underbrace{\ln(L_t)-\ln(L_{t-1})}_{\ln\left(\frac{L_t}{L_{t-1}}\right)})
+$$ To begin with the statistical analysis we first import the data:
+
+```{r}
+library(readxl)
+Second_model_data <- read_excel("Second_model_data.xlsx")
+head(Second_model_data)
+```
+
+Now, we perform the necessary transformations of the variables to reach the form of the last equation:
+
+```{r}
+suppressWarnings({
+GDP<-log(as.numeric(Second_model_data $GDP)/as.numeric(lag(Second_model_data $GDP)))
+Capital<-log(Second_model_data$Capital_accumulation/lag(Second_model_data $Capital_accumulation))
+Labor<-log(Second_model_data $active/lag(Second_model_data $active))
+df<-data.frame(
+  "GDP"=GDP,
+  "Capital"=Capital,
+  "Labor"=Labor
+)
+df<-na.omit(df)
+})
+```
+
+Based on the newly acquired data we can now perform the OLS estimation:
+
+```{r}
+model_CD<-lm(GDP~Capital+Labor, data=df)
+stargazer::stargazer(model_CD, type="text")
+```
+
+We need to perform some additional test to insure the reliability of the data, mainly stationarity tests and tests for autocorrelation:
+
+```{r}
+#ADF tests:
+library(lmtest)
+test.1<-adf.test(na.omit(df$GDP))
+test.2<-adf.test(na.omit(df$Capital), k=2)
+test.3<-adf.test(na.omit(df$Labor ))
+
+cat(sprintf("1. GDP\n"))
+cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", test.1$statistic))
+cat(sprintf("   - p-value: %.4f\n", test.1$p.value))
+cat(sprintf("   - Number of Lags: %d\n", test.1$parameter))
+cat(sprintf("   - Alternative Hypothesis: %s\n\n", test.1$alternative))
+cat(rep("-",15),"\n")
+cat(sprintf("2. Capital\n"))
+cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", test.2$statistic))
+cat(sprintf("   - p-value: %.4f\n", test.2$p.value))
+cat(sprintf("   - Number of Lags: %d\n", test.2$parameter))
+cat(sprintf("   - Alternative Hypothesis: %s\n\n", test.2$alternative))
+cat(rep("-",15),"\n")
+cat(sprintf("3. Labor\n"))
+cat(sprintf(" - Dickey-Fuller Statistic: %.4f\n", test.3$statistic))
+cat(sprintf(" - p-value: %.4f\n", test.3$p.value))
+cat(sprintf(" - Number of Lags: %d\n", test.3$parameter))
+cat(sprintf(" - Alternative Hypothesis: %s\n\n", test.3$alternative))
+```
+
+The results however point towards the idea that the series are not stationary in the 95% confidence interval, however all of them appear to be stationary in the 90% confidence interval. Regardless of the discovered lack of stationarity the final model appears to be reasonable and except the heteroscedasticity no correlation had been discovered. GDP appears to be highly correlated with both variables but the variables themselves are not correlated, ruling out the possibility of multicolinearity. The tests are given here:
+
+```{r}
+library(lmtest)
+bptest(model_CD)
+dwtest(model_CD)
+car::vif(model_CD)
+shapiro.test(residuals(model_CD))
 
 ```
 
+The test detects possible hetersocedasticity but the residuals appear to be normally distributed and not autocorrelated. Heteroscedasticity causes most problems in the estimation of standard errors, so we will provide standard errors that account for heteroscedastic behavior by estimating the variance-covariance matrix, that is given below:
+
+$$
+\text{Var}(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\top \mathbf{X})^{-1} \left( \mathbf{X}^\top \mathbf{\Omega} \mathbf{X} \right) (\mathbf{X}^\top \mathbf{X})^{-1}
+$$ where:
+
+-   $\mathbf{X}$ is the matrix of independent variables.
+-   $\mathbf{\Omega}$ is a diagonal matrix with the squared residuals as its diagonal elements, representing heteroscedasticity.
+-   $\hat{\boldsymbol{\beta}}$ is the vector of OLS estimates.
+-   $\text{Var}(\hat{\boldsymbol{\beta}})$ is the heteroscedasticity-consistent covariance matrix of $\hat{\boldsymbol{\beta}}$.
+
+The procedure is readily given below and the standard errors as well as p-values estimated:
+
+```{r}
+# Calculate heteroscedasticity-consistent standard errors (Huber-White)
+library(sandwich)
+robust_se <- vcovHC(model_CD, type = "HC")
+# Use robust standard errors in model summaries
+library(lmtest)
+coeftest(model_CD, vcov = robust_se)
+```
+
+As seen from the table above all variables appear to still be statistically significant.
+
+```{r}
+stargazer::stargazer(model1_nohetero,
+model1_hetero,
+model_CD,robust_model, type="text")
+
+```
+Test for multicolinearity:
+```{r}
+library(car)
+cat("model 1: ", vif(model1_nohetero), "\n")
+cat("model 2: ", vif(model_CD),"\n")
+cat("model 3: ", vif(robust_model),"\n")
+cat("model 4: ", vif(model1_hetero),"\n")
+```
 
 
+# Bulgaria in the period between 1888 and 1947 (Kingdom of Bulgaria)
+
+The data has already been prepared in excel, so we just export it from the relative directory:
+
+```{r message=FALSE, warning=FALSE}
+
+library(readxl)
+R_ready <- read_excel("R_ready.xlsx")
+head(R_ready)
+
+```
+
+Since the data came differentiated with one lag, namely the procedure:
+
+$$
+\Delta_{\text{lag=1}}X_t=\frac{X_{t}-X_{t-1}}{X_{t-1}}
+$$
+
+had already been performed and we have the graph readily available, the only thing left to do is to reveal the autocorrelation table:
+
+```{r}
+df<-R_ready
+df<-df[-c(1,2),-5]
+names(df)[names(df)=="GDP_Martin_approx"]<-"GDP_1939"
+names(df)[names(df)=="Relative_change_in_GDP"]<-"GDP_change"
+names(df)[names(df)=="GDP_Martin_approx_abs_val"]<-"GDP"
+names(df)[names(df)=="Relative_change_in_population"]<-"Pop_change"
+acf(df$Pop_change, main="ACP of the relative change of the population by year")
+acf(df$GDP_change, main="ACP of the relative change of the GDP by year")
+```
+
+As seen from the autocorrelation table, the series do not necessarily exhibit strong non-stationary characteristics but the autocorrelation is definitely present in the relative changes of GDP. We can further test for stationary by performing the ADF test:
+
+```{r}
+suppressWarnings(suppressMessages({
+library(tseries)
+adf_gdp <- adf.test(df$GDP_change, k = 4)
+adf_pop <- adf.test(df$Pop_change, k = 5)
+cat("Augmented Dickey-Fuller Test Results\n")
+cat("====================================\n\n")
+
+cat(sprintf("1. Relative Change in GDP\n"))
+cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", adf_gdp$statistic))
+cat(sprintf("   - p-value: %.4f\n", adf_gdp$p.value))
+cat(sprintf("   - Number of Lags: %d\n", adf_gdp$parameter))
+cat(sprintf("   - Alternative Hypothesis: %s\n\n", adf_gdp$alternative))
+
+cat(sprintf("2. Relative Change in Population\n"))
+cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", adf_pop$statistic))
+cat(sprintf("   - p-value: %.4f\n", adf_pop$p.value))
+cat(sprintf("   - Number of Lags: %d\n", adf_pop$parameter))
+cat(sprintf("   - Alternative Hypothesis: %s\n", adf_pop$alternative))}))
+```
+
+From where we can easily observe that only one difference was enough to insure the removal of any non-stationary process. This procedure allows us to asses the connections between GDP and the population growth by utilizing a correlation matrix:
+
+From the correlation plot we observe a very small correlation between the population change (partially due to the approximation algorithms used by the national statistics institute). Now we will create dummy variable to account for the wars and economic crisis that Bulgaria have been facing during the period between 1888 to 1947:
+
+```{r}
+i <- 0
+wars<-array()
+while (i < 55) {
+  if (i > 21 && i < 25) {
+    wars[i]<-1
+  }
+  if (i > 24 && i < 30) {
+    wars[i]<-1
+  }
+  if (i > 49 && i < 54) {
+    wars[i]<-1
+  } else wars[i]=0
+  i = i + 1
+}
+df$wars<-wars
+```
+
+Lets recreate the correlation table with our new variable:
+
+```{r fig.height=10, fig.width=20}
+suppressWarnings({
+library(psych)
+corPlot(df, main="Корелограма на взаимовръзката между войните, БВП и населението")
+})
+```
+
+Several noteworthy observations emerge from the analysis:
+
+-Population and Wars: The occurrence of wars shows a correlation with the absolute population size but does not exhibit a significant relationship with relative population changes.
+
+-GDP and Wars: Wars demonstrate a weak correlation with the relative changes in GDP, yet exhibit a strong correlation with the absolute changes in GDP over time.
+
+-Population and GDP Changes: When not differenced, population data displays a strong correlation with changes in GDP.
+
+-Correlation Trends: Despite expectations that wars might negatively impact population size, the observed correlations are consistently positive.
+
+To gain clearer insights into these relationships, conducting a Granger causality test is advisable. Given that the series "GDP_change" and "pop_change" are stationary, the conditions are suitable for performing this test.
+
+```{r}
+library(lmtest)
+
+# Initialize loop index
+i <- 7
+
+# Loop through lag orders up to 7
+while (i <= 7) {
+  if (i == 1) {
+    # Print header for the first iteration
+    cat(rep("_", 15), "\n")
+    cat("Testing Granger Causality Results\n")
+    cat(rep("_", 15), "\n")
+  } else {
+    # Print lag order and results
+    cat("\nTesting with lag order:", i, "\n")
+    
+    # Perform Granger causality test
+    granger_test_result <- grangertest(GDP_change ~ Pop_change, order = i, data = df)
+    
+    # Print formatted results
+    cat("Residual DF:", granger_test_result[2,1], "\n")
+    cat("DF:", granger_test_result[2,2], "\n")
+    cat("F-statistic:", granger_test_result[2,3] , "\n")
+    cat("Pr(>F):", granger_test_result[2,4], "\n")
+    
+    # Print separator
+    cat(rep("_", 15), "\n")
+  }
+  
+  # Increment the loop index
+  i <- i + 1
+}
+
+```
+
+Now lets try this with other parameters like the wars and population changes in the VAR model:
+
+```{r}
+library(lmtest)
+#wooping through up to 7 lags
+i <- 1
+while (i < 7) {
+  
+  granger_test_result <- grangertest(GDP_change ~ Birth_rate, order = i, data = df)
+  if(i==1){
+    cat(rep("-", 20),"\n")
+    cat("Granger test statistic GDP change vs. Birth_rate change", "\n")
+    cat(rep("-",20),"\n")
+  }
+  cat("Testing with lag order:", i, "\n")
+  cat("Residual DF:", granger_test_result[2,1], "\n")
+  cat("DF:", granger_test_result[2,2], "\n")
+  cat("F-statistic:", granger_test_result[2,3] , "\n")
+  cat("Pr(>F):", granger_test_result[2,4], "\n")
+  cat(rep("-",20),"\n")
+  i <- i + 1
+}
+```
+
+# Bulgaria in the period between 1945 and 1989 (the socialists regime)
+
+First export the data from excel and visualize the head to insure adequacy:
+
+```{r}
+library(readxl)
+data <- read_excel("data.xlsx", sheet = "комунизъм")
+head(data)
+```
+
+Now we will create a separate data frame containing only the relevant parameters and clean the data:
+
+```{r}
+newdf<-data.frame(
+  Year=data$Year,
+  GDP=data$GDP,
+  Population=data$Population,
+  Capital_investments=data$Capital_investments
+)
+```
+
+Calculate the relative differences and test for stationarity:
+
+```{r}
+# Calculate relative change for GDP, Population, and Capital Investments
+newdf$GDP_change <- c(NA, diff(newdf$GDP) / head(newdf$GDP, -1) )
+newdf$Population_change <- c(NA, diff(newdf$Population) / head(newdf$Population, -1) )
+newdf$Capital_investments_change <- c(NA, diff(newdf$Capital_investments) / head(newdf$Capital_investments, -1) )
+newdf<-na.omit(newdf)
+# View the resulting data frame with relative changes
+print(newdf)
+```
+
+Test the stationarity of the differences time series:
+
+```{r}
+adf.test(newdf$Population_change)
+adf.test(newdf$Capital_investments_change)
+adf.test(newdf$GDP_change)
+```
+
+from where it is easily observabale that all data, when differences is stationary. The next step in our analysis is to perform granger causality test, on all variables:
+
+```{r}
+grangertest(GDP_change ~ Capital_investments_change, order = 6, data = newdf)
+grangertest(GDP_change~Population_change, order=4, data=newdf)
+```
+
+From the tests we observe that the population and the changes in capital both granger causes the changes in GDP. Now lets asses the correlations:
+
+```{r}
+psych::cor.plot(newdf)
+```
