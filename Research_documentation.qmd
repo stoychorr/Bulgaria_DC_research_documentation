@@ -416,7 +416,9 @@ model1_hetero,
 model_CD,robust_model, type="text")
 
 ```
+
 Test for multicolinearity:
+
 ```{r}
 library(car)
 cat("model 1: ", vif(model1_nohetero), "\n")
@@ -425,7 +427,6 @@ cat("model 3: ", vif(robust_model),"\n")
 cat("model 4: ", vif(model1_hetero),"\n")
 ```
 
-
 # Bulgaria in the period between 1888 and 1947 (Kingdom of Bulgaria)
 
 The data has already been prepared in excel, so we just export it from the relative directory:
@@ -433,51 +434,79 @@ The data has already been prepared in excel, so we just export it from the relat
 ```{r message=FALSE, warning=FALSE}
 
 library(readxl)
-R_ready <- read_excel("R_ready.xlsx")
+data <- read_excel("data.xlsx")
 head(R_ready)
 
 ```
 
-Since the data came differentiated with one lag, namely the procedure:
+We will perform the procedure of differencing with one lag on every variable in our data, following the formula:
 
 $$
 \Delta_{\text{lag=1}}X_t=\frac{X_{t}-X_{t-1}}{X_{t-1}}
 $$
 
-had already been performed and we have the graph readily available, the only thing left to do is to reveal the autocorrelation table:
+Before that we perform some initial cleaning of the excel spreadsheet, to remove any redundant excel object that is not recognized by R:
 
 ```{r}
-df<-R_ready
-df<-df[-c(1,2),-5]
-names(df)[names(df)=="GDP_Martin_approx"]<-"GDP_1939"
-names(df)[names(df)=="Relative_change_in_GDP"]<-"GDP_change"
-names(df)[names(df)=="GDP_Martin_approx_abs_val"]<-"GDP"
-names(df)[names(df)=="Relative_change_in_population"]<-"Pop_change"
-acf(df$Pop_change, main="ACP of the relative change of the population by year")
-acf(df$GDP_change, main="ACP of the relative change of the GDP by year")
+colnames(data)[4]<-"GDP"
+data<-data[,c(seq(1:4))]
+#after the clean up we produce a correlation plot to visualize time dependencies:
+psych::cor.plot(data)
+
+```
+
+Now we create a separate data set with the differenced data, as outlined above:
+
+```{r}
+# Load necessary library
+library(dplyr)
+
+# Ensure all relevant columns are numeric
+data <- data %>%
+  mutate(
+    GDP = as.numeric(GDP),
+    Born_alive = as.numeric(Born_alive),
+    Population = as.numeric(Population)
+  )
+
+new_data <- data %>%
+  mutate(
+    GDP_growth = (GDP - lag(GDP)) / lag(GDP),
+    Birth_rate_growth = (Born_alive - lag(Born_alive)) / lag(Born_alive),
+    Birth_rate=Born_alive,
+    Population_growth = (Population - lag(Population)) / lag(Population)
+  ) %>%
+  select(Year, GDP_growth, Birth_rate_growth, Population_growth,Birth_rate)
+new_data[is.na(new_data)] <- 0
+print(new_data)
+psych::cor.plot(new_data)
 ```
 
 As seen from the autocorrelation table, the series do not necessarily exhibit strong non-stationary characteristics but the autocorrelation is definitely present in the relative changes of GDP. We can further test for stationary by performing the ADF test:
 
 ```{r}
-suppressWarnings(suppressMessages({
-library(tseries)
-adf_gdp <- adf.test(df$GDP_change, k = 4)
-adf_pop <- adf.test(df$Pop_change, k = 5)
-cat("Augmented Dickey-Fuller Test Results\n")
-cat("====================================\n\n")
+# Perform the ADF tests
+adf_gdp <- adf.test(new_data$GDP_growth)
+adf_pop <- adf.test(new_data$Population_growth,k=4)
+adf_birth <- adf.test(new_data$Birth_rate_growth,k=1)
+adf_birth2 <- adf.test(new_data$Birth_rate)
+print(adf_gdp)
+print(adf_pop)
+print(adf_birth)
+print(adf_birth2)
+```
 
-cat(sprintf("1. Relative Change in GDP\n"))
-cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", adf_gdp$statistic))
-cat(sprintf("   - p-value: %.4f\n", adf_gdp$p.value))
-cat(sprintf("   - Number of Lags: %d\n", adf_gdp$parameter))
-cat(sprintf("   - Alternative Hypothesis: %s\n\n", adf_gdp$alternative))
+Further evidence for the stationary character of the processes is given by the autocorrelation plots:
 
-cat(sprintf("2. Relative Change in Population\n"))
-cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", adf_pop$statistic))
-cat(sprintf("   - p-value: %.4f\n", adf_pop$p.value))
-cat(sprintf("   - Number of Lags: %d\n", adf_pop$parameter))
-cat(sprintf("   - Alternative Hypothesis: %s\n", adf_pop$alternative))}))
+```{r}
+acf(new_data$GDP_growth)
+acf(new_data$Birth_rate_growth)
+acf(new_data$Population_growth)
+acf(new_data$Birth_rate)
+pacf(new_data$GDP_growth)
+pacf(new_data$Birth_rate_growth)
+pacf(new_data$Population_growth)
+pacf(new_data$Birth_rate)
 ```
 
 From where we can easily observe that only one difference was enough to insure the removal of any non-stationary process. This procedure allows us to asses the connections between GDP and the population growth by utilizing a correlation matrix:
@@ -487,19 +516,19 @@ From the correlation plot we observe a very small correlation between the popula
 ```{r}
 i <- 0
 wars<-array()
-while (i < 55) {
+while (i < 57) {
   if (i > 21 && i < 25) {
     wars[i]<-1
   }
   if (i > 24 && i < 30) {
     wars[i]<-1
   }
-  if (i > 49 && i < 54) {
+  if (i > 49 && i < 56) {
     wars[i]<-1
   } else wars[i]=0
   i = i + 1
 }
-df$wars<-wars
+new_data$wars<-wars
 ```
 
 Lets recreate the correlation table with our new variable:
@@ -507,80 +536,51 @@ Lets recreate the correlation table with our new variable:
 ```{r fig.height=10, fig.width=20}
 suppressWarnings({
 library(psych)
-corPlot(df, main="Корелограма на взаимовръзката между войните, БВП и населението")
+corPlot(new_data, main="Корелограма на взаимовръзката между войните, БВП и населението")
 })
 ```
 
-Several noteworthy observations emerge from the analysis:
-
--Population and Wars: The occurrence of wars shows a correlation with the absolute population size but does not exhibit a significant relationship with relative population changes.
-
--GDP and Wars: Wars demonstrate a weak correlation with the relative changes in GDP, yet exhibit a strong correlation with the absolute changes in GDP over time.
-
--Population and GDP Changes: When not differenced, population data displays a strong correlation with changes in GDP.
-
--Correlation Trends: Despite expectations that wars might negatively impact population size, the observed correlations are consistently positive.
-
-To gain clearer insights into these relationships, conducting a Granger causality test is advisable. Given that the series "GDP_change" and "pop_change" are stationary, the conditions are suitable for performing this test.
-
 ```{r}
 library(lmtest)
-
-# Initialize loop index
-i <- 7
-
-# Loop through lag orders up to 7
-while (i <= 7) {
-  if (i == 1) {
-    # Print header for the first iteration
-    cat(rep("_", 15), "\n")
-    cat("Testing Granger Causality Results\n")
-    cat(rep("_", 15), "\n")
-  } else {
-    # Print lag order and results
-    cat("\nTesting with lag order:", i, "\n")
-    
-    # Perform Granger causality test
-    granger_test_result <- grangertest(GDP_change ~ Pop_change, order = i, data = df)
-    
-    # Print formatted results
-    cat("Residual DF:", granger_test_result[2,1], "\n")
-    cat("DF:", granger_test_result[2,2], "\n")
-    cat("F-statistic:", granger_test_result[2,3] , "\n")
-    cat("Pr(>F):", granger_test_result[2,4], "\n")
-    
-    # Print separator
-    cat(rep("_", 15), "\n")
-  }
-  
-  # Increment the loop index
-  i <- i + 1
-}
-
+grangertest(new_data$GDP_growth~new_data$Birth_rate_growth, order=6)
+grangertest(new_data$GDP_growth~new_data$Population_growth, order=7)
 ```
 
-Now lets try this with other parameters like the wars and population changes in the VAR model:
+```{r}
+lagged_data <- new_data %>%
+  mutate(
+    G=GDP_growth,
+    G1 = lag(GDP_growth, 1),
+    G2 = lag(GDP_growth, 2),
+    G3 = lag(GDP_growth, 3),
+    G4 = lag(GDP_growth, 4),
+    G5 = lag(GDP_growth, 5),
+    G6 = lag(GDP_growth, 6),
+    G7 = lag(GDP_growth, 7),
+    
+    B1 = lag(Birth_rate_growth, 1),
+    B2 = lag(Birth_rate_growth, 2),
+    B3 = lag(Birth_rate_growth, 3),
+    B4 = lag(Birth_rate_growth, 4),
+    B5 = lag(Birth_rate_growth, 5),
+    B6 = lag(Birth_rate_growth, 6),
+    B7 = lag(Birth_rate_growth, 7),
+    
+    P1 = lag(Population_growth, 1),
+    P2 = lag(Population_growth, 2),
+    P3 = lag(Population_growth, 3),
+    P4 = lag(Population_growth, 4),
+    P5 = lag(Population_growth, 5),
+    P6 = lag(Population_growth, 6),
+    P7 = lag(Population_growth, 7)
+  )
+lagged_data<-lagged_data[,-c(1,2,3,4,5,6)]
+psych::cor.plot(lagged_data)
+```
 
 ```{r}
-library(lmtest)
-#wooping through up to 7 lags
-i <- 1
-while (i < 7) {
-  
-  granger_test_result <- grangertest(GDP_change ~ Birth_rate, order = i, data = df)
-  if(i==1){
-    cat(rep("-", 20),"\n")
-    cat("Granger test statistic GDP change vs. Birth_rate change", "\n")
-    cat(rep("-",20),"\n")
-  }
-  cat("Testing with lag order:", i, "\n")
-  cat("Residual DF:", granger_test_result[2,1], "\n")
-  cat("DF:", granger_test_result[2,2], "\n")
-  cat("F-statistic:", granger_test_result[2,3] , "\n")
-  cat("Pr(>F):", granger_test_result[2,4], "\n")
-  cat(rep("-",20),"\n")
-  i <- i + 1
-}
+model<-lm(GDP_growth~dplyr::lag(GDP_growth,2), data=new_data)
+summary(model)
 ```
 
 # Bulgaria in the period between 1945 and 1989 (the socialists regime)
@@ -589,50 +589,158 @@ First export the data from excel and visualize the head to insure adequacy:
 
 ```{r}
 library(readxl)
-data <- read_excel("data.xlsx", sheet = "комунизъм")
+data <- read_excel("data.xlsx", sheet = "1944-1989")
 head(data)
 ```
 
 Now we will create a separate data frame containing only the relevant parameters and clean the data:
 
 ```{r}
-newdf<-data.frame(
-  Year=data$Year,
-  GDP=data$GDP,
-  Population=data$Population,
-  Capital_investments=data$Capital_investments
+Data<-data[,c(1,2,3,4,5,6,7)]
+psych::describe(Data)
+library(dplyr)
+Data <- Data %>%
+  mutate(
+    capital_diff = (Capital_investments - lag(Capital_investments)) / lag(Capital_investments),
+    Population_diff=(Population-lag(Population))/lag(Population),
+    All_employed_diff=(All_employed-lag(All_employed))/lag(All_employed),
+    Workers_diff=(Workers-lag(Workers))/lag(Workers),
+    GSP_diff=(GSP-lag(GSP))/lag(GSP),
+    GNP_diff=(GNP-lag(GNP))/lag(GNP),
+  )
+
+```
+
+```{r}
+Data<-na.omit(Data[,-c(1,2,3,4,5,6,7)])
+psych::cor.plot(Data)
+```
+
+```{r}
+
+
+```
+
+```{r}
+library(tseries)
+library(dplyr)
+library(kableExtra)
+perform_adf_test <- function(series_name, series_data) {
+  if (length(na.omit(series_data)) == 0) {
+    message(paste("Warning: No valid data for series", series_name))
+    return(data.frame(Series = series_name, p_value = NA, Statistic = NA))
+  }
+  
+  result <- tryCatch(adf.test(series_data), error = function(e) {
+    message(paste("Error running ADF test for series", series_name, ":", e$message))
+    return(NULL)
+  })
+  if (is.null(result)) {
+    return(data.frame(Series = series_name, p_value = NA, Statistic = NA))
+  }
+  critical_values <- ifelse(!is.null(result$critical.values), result$critical.values, rep(NA, 3))
+  
+  return(data.frame(
+    Series = series_name,
+    p_value = result$p.value,
+    Statistic = result$statistic
+  ))
+}
+
+series_list <- c("Capital Diff", "All Employed Diff", "Workers Diff", "Population Diff", "GSP Diff", "GNP Diff")
+data_list <- list(Data$capital_diff, Data$All_employed_diff, Data$Workers_diff, Data$Population_diff, Data$GSP_diff, Data$GNP_diff)
+adf_results <- bind_rows(mapply(perform_adf_test, series_list, data_list, SIMPLIFY = FALSE))
+adf<-data.frame(
+  Series=adf_results$Series,
+  p_value=adf_results$p_value,
+  Statistic=adf_results$Statistic
 )
+print(adf)
 ```
 
-Calculate the relative differences and test for stationarity:
-
 ```{r}
-# Calculate relative change for GDP, Population, and Capital Investments
-newdf$GDP_change <- c(NA, diff(newdf$GDP) / head(newdf$GDP, -1) )
-newdf$Population_change <- c(NA, diff(newdf$Population) / head(newdf$Population, -1) )
-newdf$Capital_investments_change <- c(NA, diff(newdf$Capital_investments) / head(newdf$Capital_investments, -1) )
-newdf<-na.omit(newdf)
-# View the resulting data frame with relative changes
-print(newdf)
+# Load necessary library
+library(lmtest)
+
+tests <- list(
+  list(dep_var = "GNP_diff", ind_var = "capital_diff", order = 1),
+  list(dep_var = "GSP_diff", ind_var = "capital_diff", order = 3),
+  list(dep_var = "GNP_diff", ind_var = "Workers_diff", order = 1),
+  list(dep_var = "GSP_diff", ind_var = "Workers_diff", order = 1),
+  list(dep_var = "GNP_diff", ind_var = "Population_diff", order = 5),
+  list(dep_var = "GSP_diff", ind_var = "Population_diff", order = 5),
+  list(dep_var = "GNP_diff", ind_var = "All_employed_diff", order = 1),
+  list(dep_var = "GSP_diff", ind_var = "All_employed_diff", order = 1)
+)
+
+results <- data.frame(Test_No = integer(),
+                      Dependent_Variable = character(),
+                      Independent_Variable = character(),
+                      Order = integer(),
+                      F_Statistic = numeric(),
+                      P_Value = numeric(),
+                      stringsAsFactors = FALSE)
+
+for (i in seq_along(tests)) {
+  test <- tests[[i]]
+  result <- na.omit(grangertest(as.formula(paste(test$dep_var, "~", test$ind_var)), order = test$order, data = Data))
+  if (!is.null(result)) {
+    f_stat <- result$F[1]
+    p_val <- result$`Pr(>F)`[1]
+  } else {
+    f_stat <- NA
+    p_val <- NA
+  }
+  results <- rbind(results, data.frame(Test_No = i,
+                                        Dependent_Variable = test$dep_var,
+                                        Independent_Variable = test$ind_var,
+                                        Order = test$order,
+                                        F_Statistic = f_stat,
+                                        P_Value = p_val))
+}
+
+print(results)
+
+
 ```
 
-Test the stationarity of the differences time series:
-
 ```{r}
-adf.test(newdf$Population_change)
-adf.test(newdf$Capital_investments_change)
-adf.test(newdf$GDP_change)
-```
+# Load necessary libraries
+library(ivreg)
+library(stargazer)
+library(car)
+library(lmtest)
+library(sandwich)
 
-from where it is easily observabale that all data, when differences is stationary. The next step in our analysis is to perform granger causality test, on all variables:
+# Linear regression model
+model <- lm(GSP_diff ~ capital_diff + lag(Population_diff, 7) + Workers_diff, data = Data)
 
-```{r}
-grangertest(GDP_change ~ Capital_investments_change, order = 6, data = newdf)
-grangertest(GDP_change~Population_change, order=4, data=newdf)
-```
+# Instrumental variables (IV) regression model
+modeliv <- ivreg(GSP_diff ~ Workers_diff | lag(Population_diff, 7), data = Data)
 
-From the tests we observe that the population and the changes in capital both granger causes the changes in GDP. Now lets asses the correlations:
+# Summary of both models with stargazer
+stargazer::stargazer(model, modeliv, type = "text")
 
-```{r}
-psych::cor.plot(newdf)
+# Variance Inflation Factor (VIF) for multicollinearity in the linear model
+vif(model)
+
+# Breusch-Pagan test for heteroscedasticity in both models
+bptest(model)    # For the linear model
+bptest(modeliv)  # For the IV model
+
+# Breusch-Godfrey test for serial correlation in both models
+bgtest(model)    # For the linear model
+bgtest(modeliv)  # For the IV model
+
+# Shapiro-Wilk test for normality of residuals in both models
+shapiro.test(model$residuals)    # For the linear model
+shapiro.test(modeliv$residuals)  # For the IV model
+
+# Partial Autocorrelation Function (PACF) of residuals in both models
+pacf(model$residuals)    # For the linear model
+pacf(modeliv$residuals)  # For the IV model
+
+# Robust standard errors using heteroscedasticity-consistent (HC1) covariance matrix in the IV model
+coeftest(modeliv, vcov = vcovHC(modeliv, type = "HC1"))
+
 ```
