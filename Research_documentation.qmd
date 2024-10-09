@@ -352,9 +352,9 @@ We need to perform some additional test to insure the reliability of the data, m
 ```{r}
 #ADF tests:
 library(lmtest)
-test.1<-adf.test(na.omit(df$GDP))
-test.2<-adf.test(na.omit(df$Capital), k=2)
-test.3<-adf.test(na.omit(df$Labor ))
+test.1<-adf.test(na.omit(df$GDP),k=3)
+test.2<-adf.test(na.omit(df$Capital), k=1)
+test.3<-adf.test(na.omit(df$Labor),k=3)
 
 cat(sprintf("1. GDP\n"))
 cat(sprintf("   - Dickey-Fuller Statistic: %.4f\n", test.1$statistic))
@@ -435,7 +435,7 @@ The data has already been prepared in excel, so we just export it from the relat
 
 library(readxl)
 data <- read_excel("data.xlsx")
-head(R_ready)
+head(data)
 
 ```
 
@@ -455,39 +455,43 @@ psych::cor.plot(data)
 
 ```
 
-Now we create a separate data set with the differenced data, as outlined above:
 
 ```{r}
-# Load necessary library
+
 library(dplyr)
 
-# Ensure all relevant columns are numeric
+# Ensure all relevant columns are numeric and clean potential non-numeric values
 data <- data %>%
   mutate(
-    GDP = as.numeric(GDP),
-    Born_alive = as.numeric(Born_alive),
-    Population = as.numeric(Population)
+    GDP = as.numeric(as.character(GDP)),
+    Born_alive = as.numeric(as.character(Born_alive)),
+    Population = as.numeric(as.character(Population))
   )
 
+# Calculate growth rates and handle NAs where appropriate
 new_data <- data %>%
   mutate(
     GDP_growth = (GDP - lag(GDP)) / lag(GDP),
     Birth_rate_growth = (Born_alive - lag(Born_alive)) / lag(Born_alive),
-    Birth_rate=Born_alive,
+    Birth_rate = Born_alive,
     Population_growth = (Population - lag(Population)) / lag(Population)
-  ) %>%
-  select(Year, GDP_growth, Birth_rate_growth, Population_growth,Birth_rate)
+  ) 
+new_data<-new_data[,-c(2,3,4)]
 new_data[is.na(new_data)] <- 0
 print(new_data)
-psych::cor.plot(new_data)
+
+
+
+psych::cor.plot(new_data) 
+
 ```
 
-As seen from the autocorrelation table, the series do not necessarily exhibit strong non-stationary characteristics but the autocorrelation is definitely present in the relative changes of GDP. We can further test for stationary by performing the ADF test:
 
 ```{r}
 # Perform the ADF tests
+library(tseries)
 adf_gdp <- adf.test(new_data$GDP_growth)
-adf_pop <- adf.test(new_data$Population_growth,k=4)
+adf_pop <- adf.test(new_data$Population_growth,k=3)
 adf_birth <- adf.test(new_data$Birth_rate_growth,k=1)
 adf_birth2 <- adf.test(new_data$Birth_rate)
 print(adf_gdp)
@@ -543,7 +547,7 @@ corPlot(new_data, main="Корелограма на взаимовръзката
 ```{r}
 library(lmtest)
 grangertest(new_data$GDP_growth~new_data$Birth_rate_growth, order=6)
-grangertest(new_data$GDP_growth~new_data$Population_growth, order=7)
+grangertest(new_data$GDP_growth~new_data$Population_growth, order=8)
 ```
 
 ```{r}
@@ -576,11 +580,6 @@ lagged_data <- new_data %>%
   )
 lagged_data<-lagged_data[,-c(1,2,3,4,5,6)]
 psych::cor.plot(lagged_data)
-```
-
-```{r}
-model<-lm(GDP_growth~dplyr::lag(GDP_growth,2), data=new_data)
-summary(model)
 ```
 
 # Bulgaria in the period between 1945 and 1989 (the socialists regime)
