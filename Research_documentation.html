@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stoycho Rusinov">
+
+<title>The Impact of Demographic Changes on Economic Growth in Bulgaria (Research documentation)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Research_documentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Research_documentation_files/libs/quarto-html/quarto.js"></script>
+<script src="Research_documentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="Research_documentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Research_documentation_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Research_documentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Research_documentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Research_documentation_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Research_documentation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Research_documentation_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Impact of Demographic Changes on Economic Growth in Bulgaria (Research documentation)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Stoycho Rusinov </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>This study examines the demographic crisis in Bulgaria as a critical barrier to economic growth. By analyzing data from the past century, based on the Bulgarian Statistical Yearbook, we investigate the impact of demographic changes on Gross Domestic Product (GDP), capital, and its efficiency. An econometric evaluation of the factors influencing GDP is conducted using data spanning a broad time range to highlight the economic processes that have stimulated growth across three different political regimes in Bulgaria’s history.</p>
+<p>The results indicate that, until the end of the socialist period, demographic growth was not the primary driver of economic progress due to the inefficient utilization of labor resources. However, following the transition, human capital began to play a decisive role in GDP dynamics, surpassing even gross capital investments. This shift raises a critical question: Can the declining population slow GDP growth to the extent that it triggers a recession and transforms the demographic crisis into a significant macroeconomic problem?</p>
+</section>
+<section id="bulgaria-after-1989-modern-bulgaria" class="level1">
+<h1>Bulgaria after 1989 (Modern Bulgaria)</h1>
+<p>Prepare the data from excel:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_stop_isty <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data stop isty.xlsx"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_stop_isty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 12
+  YEAR   Gross_Value_Added_at_Ba…¹ Compensation_of_Empl…² Other_Taxes_on_Produ…³
+  &lt;chr&gt;                      &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
+1 1995Q1                    0.0275                  0.234                -0.254 
+2 1995Q2                    0.190                   0.216                -0.0619
+3 1995Q3                    0.176                   0.254                -0.352 
+4 1995Q4                   -0.0671                 -0.422                 3.02  
+5 1996Q1                    0.0316                  0.280                 0.371 
+6 1996Q2                    0.575                   0.817                -0.483 
+# ℹ abbreviated names: ¹​Gross_Value_Added_at_Basic_Prices,
+#   ²​Compensation_of_Employees, ³​Other_Taxes_on_Production
+# ℹ 8 more variables: Other_Subsidies_on_Production &lt;dbl&gt;,
+#   Gross_Operating_Surplus_Gross_Mixed_Income &lt;dbl&gt;,
+#   Consumption_of_Fixed_Capital &lt;dbl&gt;,
+#   Net_Operating_Surplus_Net_Mixed_Income &lt;dbl&gt;, GDP &lt;dbl&gt;,
+#   Employed_persons &lt;dbl&gt;, Hired &lt;dbl&gt;, Self_employed &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Provide descriptive statistics of the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(data_stop_isty)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                           vars   n  mean    sd median trimmed
+YEAR*                                         1 111 56.00 32.19  56.00   56.00
+Gross_Value_Added_at_Basic_Prices             2 111  0.07  0.24   0.08    0.05
+Compensation_of_Employees                     3 111  0.07  0.20   0.05    0.04
+Other_Taxes_on_Production                     4 111  0.35  1.25   0.12    0.16
+Other_Subsidies_on_Production                 5 111  0.32  1.41   0.14    0.17
+Gross_Operating_Surplus_Gross_Mixed_Income    6 111  0.09  0.32   0.13    0.08
+Consumption_of_Fixed_Capital                  7 111  0.07  0.21   0.05    0.04
+Net_Operating_Surplus_Net_Mixed_Income        8 111  0.11  0.38   0.13    0.11
+GDP                                           9 111  0.02  0.16   0.05    0.03
+Employed_persons                             10 111  0.00  0.06   0.01    0.00
+Hired                                        11 111  0.00  0.03   0.00    0.00
+Self_employed                                12 111  0.01  0.16   0.01    0.01
+                                             mad   min    max  range  skew
+YEAR*                                      41.51  1.00 111.00 110.00  0.00
+Gross_Value_Added_at_Basic_Prices           0.14 -0.33   1.59   1.92  2.62
+Compensation_of_Employees                   0.06 -0.42   1.16   1.58  3.13
+Other_Taxes_on_Production                   0.55 -0.85  10.64  11.49  5.27
+Other_Subsidies_on_Production               0.67 -0.73  13.88  14.61  7.96
+Gross_Operating_Surplus_Gross_Mixed_Income  0.29 -0.46   1.90   2.36  1.59
+Consumption_of_Fixed_Capital                0.08 -0.37   1.17   1.54  2.57
+Net_Operating_Surplus_Net_Mixed_Income      0.42 -0.58   2.01   2.60  0.90
+GDP                                         0.13 -0.36   0.28   0.65 -0.60
+Employed_persons                            0.06 -0.11   0.12   0.22 -0.28
+Hired                                       0.04 -0.06   0.06   0.12 -0.30
+Self_employed                               0.18 -0.26   0.31   0.57 -0.08
+                                           kurtosis   se
+YEAR*                                         -1.23 3.06
+Gross_Value_Added_at_Basic_Prices             14.34 0.02
+Compensation_of_Employees                     13.17 0.02
+Other_Taxes_on_Production                     38.73 0.12
+Other_Subsidies_on_Production                 73.64 0.13
+Gross_Operating_Surplus_Gross_Mixed_Income     7.97 0.03
+Consumption_of_Fixed_Capital                   9.64 0.02
+Net_Operating_Surplus_Net_Mixed_Income         3.57 0.04
+GDP                                           -0.84 0.02
+Employed_persons                              -0.94 0.01
+Hired                                         -0.98 0.00
+Self_employed                                 -0.94 0.01</code></pre>
+</div>
+</div>
+<p>Fit the model:</p>
+<p><span class="math display">\[
+\Delta Z'_t = \alpha_0 + \alpha_1 \cdot \frac{\Delta \text{Compensation}_t}{\text{Compensation}_{t-1}} + \alpha_2 \cdot \Delta Z_t + \alpha_3 \cdot \frac{\text{Fixed\_Capital}_t}{\text{Fixed\_Capital}_{t-1}} +\text{shock1}_t+\text{shock2}_t+ \varepsilon_t
+\]</span></p>
+<p>where <span class="math inline">\(\Delta Z_t=\frac{\Delta \mathrm{Hired}_t}{\mathrm{Hired}_{t-1}}-\frac{\Delta \mathrm{Hired}_{t-4}}{\mathrm{Hired}_{t-5}}\)</span> и <span class="math inline">\(\Delta Z'_t=\frac{\Delta \mathrm{GDP}_t}{\mathrm{GDP}_{t-1}}-\frac{\Delta \mathrm{GDP}_{t-4}}{\mathrm{GDP}_{t-5}}\)</span>, which we perform to remove the temporal and cyclic dependencies in the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary library</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Please cite as: </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> R package version 5.2.3. https://CRAN.R-project.org/package=stargazer </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the differenced variable with NA padding for alignment</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data_stop_isty<span class="sc">$</span>diff_Hired_lag4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">4</span>), <span class="fu">diff</span>(data_stop_isty<span class="sc">$</span>Hired, <span class="at">lag =</span> <span class="dv">4</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data_stop_isty<span class="sc">$</span>diff_GDP <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">4</span>), <span class="fu">diff</span>(data_stop_isty<span class="sc">$</span>GDP, <span class="at">lag =</span> <span class="dv">4</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Load the main OLS model</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>time<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>i<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i<span class="sc">&lt;=</span><span class="dv">111</span>){</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">&lt;=</span><span class="dv">19</span>){</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    time[i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {time[i]<span class="ot">=</span><span class="dv">0</span>}</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  i<span class="ot">&lt;-</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>time2<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">111</span>) {</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">55</span> <span class="sc">&amp;&amp;</span> i <span class="sc">&lt;</span> <span class="dv">60</span>) {</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    time2[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    time2[i] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>model1_nohetero<span class="ot">&lt;-</span><span class="fu">lm</span>(diff_GDP<span class="sc">~</span>Compensation_of_Employees<span class="sc">+</span>Consumption_of_Fixed_Capital<span class="sc">+</span>diff_Hired_lag4, <span class="at">data=</span>data_stop_isty[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)])</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>model1_hetero<span class="ot">&lt;-</span><span class="fu">lm</span>(diff_GDP<span class="sc">~</span>Compensation_of_Employees<span class="sc">+</span>Consumption_of_Fixed_Capital<span class="sc">+</span>diff_Hired_lag4<span class="sc">+</span>time<span class="sc">+</span>time2, <span class="at">data=</span>data_stop_isty[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)])</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>robust_se <span class="ot">&lt;-</span> <span class="fu">vcovHC</span>(model1_hetero, <span class="at">type =</span> <span class="st">"HC"</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Use robust standard errors in model summaries</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: zoo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'zoo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(model1_hetero, <span class="at">vcov =</span> robust_se)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+                               Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)                   0.0018078  0.0032556  0.5553  0.57993   
+Compensation_of_Employees    -0.1349774  0.0497436 -2.7135  0.00783 **
+Consumption_of_Fixed_Capital  0.1305425  0.0501660  2.6022  0.01065 * 
+diff_Hired_lag4               0.7369094  0.3221788  2.2873  0.02427 * 
+time                         -0.0250509  0.0164764 -1.5204  0.13153   
+time2                        -0.0118216  0.0162552 -0.7272  0.46876   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>The graph of the differenced GDP is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">111</span>),data_stop_isty<span class="sc">$</span>diff_GDP, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">main=</span><span class="st">"Изменения на диференцираното БВП с два и четири лагови стойности."</span>, <span class="at">xlab=</span><span class="st">"Период в тримесечия"</span>, <span class="at">ylab=</span><span class="st">"Изменения в БВП"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Perform ADF tests on the all variables to insure they fit the requirements of the Granger test and linear regression modelling (so are statinary):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>({</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>columns_to_test <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Compensation_of_Employees"</span>, <span class="st">"Consumption_of_Fixed_Capital"</span>, <span class="st">"diff_Hired_lag4"</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>adf_results <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col <span class="cf">in</span> columns_to_test) {</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  data_to_test <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data_stop_isty[[col]])</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  adf_results[[col]] <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(data_to_test)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract ADF statistic, p-value, and other results</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col <span class="cf">in</span> columns_to_test) {</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Results for:"</span>, col, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"ADF Test Statistic:"</span>, adf_results[[col]]<span class="sc">$</span>statistic, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"P-value:"</span>, adf_results[[col]]<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Alternative Hypothesis:"</span>, adf_results[[col]]<span class="sc">$</span>alternative, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"-----------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(data_to_test)</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Results for: Compensation_of_Employees 
+ADF Test Statistic: -4.718769 
+P-value: 0.01 
+Alternative Hypothesis: stationary 
+-----------------------------
+Results for: Consumption_of_Fixed_Capital 
+ADF Test Statistic: -3.918727 
+P-value: 0.01571905 
+Alternative Hypothesis: stationary 
+-----------------------------
+Results for: diff_Hired_lag4 
+ADF Test Statistic: -6.478495 
+P-value: 0.01 
+Alternative Hypothesis: stationary 
+-----------------------------</code></pre>
+</div>
+</div>
+<p>Due to the low <span class="math inline">\(R^2\)</span> we will perform the RESET test to check for omitted variables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">resettest</span>(model1_nohetero, <span class="at">power=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>)})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    RESET test
+
+data:  model1_nohetero
+RESET = 6.4406, df1 = 2, df2 = 101, p-value = 0.00233</code></pre>
+</div>
+</div>
+<p>Perform tests for heteroscedasticity, and DW test on residuals to insure they fit the axioms of linear regression and then print the auto correlation table:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dwtest</span>(model1_nohetero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  model1_nohetero
+DW = 2.327, p-value = 0.9541
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(model1_nohetero, <span class="at">studentize =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  model1_nohetero
+BP = 3.1872, df = 3, p-value = 0.3636</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(model1_hetero<span class="sc">$</span>residuals, <span class="at">main=</span><span class="st">"Автокорелограма на остатъчните грешки в линейната регресия"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>No autocorrelation was detected, as evidenced by the autocorrelation table, which shows that the structure of the lagged error terms is adequate for further reliability assurance. However, due to the model’s low predictive power, the Breusch-Pagan (BP) test suggests the presence of heteroscedasticity in the error terms, which is expected. To meet the package requirements for other regression models, we need to adjust the lengths of the dummy variables accordinglly, we do this by utilizing a while woop, to construct a dummy variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(time)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(time2)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>time<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>time2<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i<span class="sc">&lt;=</span><span class="dv">106</span>){</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">&lt;=</span><span class="dv">19</span>){</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    time[i]<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {time[i]<span class="ot">=</span><span class="dv">0</span>}</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  i<span class="ot">=</span>i<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>time2<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">106</span>) {</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">55</span> <span class="sc">&amp;&amp;</span> i <span class="sc">&lt;</span> <span class="dv">60</span>) {</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    time2[i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    time2[i] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Fit robust regression model for comparison:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'MASS'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    select</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data_stop_isty<span class="ot">&lt;-</span><span class="fu">na.omit</span>(data_stop_isty[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)])</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the robust regression model</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>robust_model <span class="ot">&lt;-</span> <span class="fu">rlm</span>(diff_GDP<span class="sc">~</span>Compensation_of_Employees<span class="sc">+</span>Consumption_of_Fixed_Capital<span class="sc">+</span>diff_Hired_lag4, <span class="at">data=</span>data_stop_isty, <span class="at">method=</span><span class="st">"M"</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>robust_model2 <span class="ot">&lt;-</span> <span class="fu">rlm</span>(diff_GDP<span class="sc">~</span>Compensation_of_Employees<span class="sc">+</span>Consumption_of_Fixed_Capital<span class="sc">+</span>diff_Hired_lag4, <span class="at">data=</span>data_stop_isty, <span class="at">method=</span><span class="st">"MM"</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>predicted_values_RM <span class="ot">&lt;-</span> <span class="fu">predict</span>(robust_model, <span class="at">newdata =</span> <span class="fu">na.omit</span>(data_stop_isty[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">9</span>)]))</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>predicted_values_RM2 <span class="ot">&lt;-</span> <span class="fu">predict</span>(robust_model2, <span class="at">newdata =</span> <span class="fu">na.omit</span>(data_stop_isty[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">9</span>)]))</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((data_stop_isty<span class="sc">$</span>diff_GDP <span class="sc">-</span> <span class="fu">mean</span>(data_stop_isty<span class="sc">$</span>diff_GDP))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((data_stop_isty<span class="sc">$</span>diff_GDP <span class="sc">-</span> predicted_values_RM)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (SSE <span class="sc">/</span> SST)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"R_ squared="</span>,<span class="fu">round</span>(r_squared,<span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R_ squared= 0.21"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((data_stop_isty<span class="sc">$</span>diff_GDP <span class="sc">-</span> predicted_values_RM2)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (SSE <span class="sc">/</span> SST)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"R_ squared="</span>,<span class="fu">round</span>(r_squared,<span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R_ squared= 0.07"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(robust_model, robust_model2, <span class="at">type=</span><span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===========================================================
+                                   Dependent variable:     
+                               ----------------------------
+                                         diff_GDP          
+                                     (1)           (2)     
+-----------------------------------------------------------
+Compensation_of_Employees         -0.074***       -0.009   
+                                   (0.023)       (0.021)   
+                                                           
+Consumption_of_Fixed_Capital       0.041*         -0.024   
+                                   (0.021)       (0.020)   
+                                                           
+diff_Hired_lag4                   0.528***       0.337**   
+                                   (0.179)       (0.164)   
+                                                           
+Constant                           -0.001        -0.0003   
+                                   (0.003)       (0.002)   
+                                                           
+-----------------------------------------------------------
+Observations                         107           107     
+Residual Std. Error (df = 103)      0.023         0.021    
+===========================================================
+Note:                           *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p>Perform the BP-test for heteroscedasticity:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(robust_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  robust_model
+BP = 3.1872, df = 3, p-value = 0.3636</code></pre>
+</div>
+</div>
+<p>Fit a general linear model to use the maximum likelihood estimator instead of OLS for comparison.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model using glmmTMB</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>model_general_lenear <span class="ot">&lt;-</span> <span class="fu">glm</span>(diff_GDP <span class="sc">~</span> Compensation_of_Employees <span class="sc">+</span> Consumption_of_Fixed_Capital <span class="sc">+</span> diff_Hired_lag4 , </span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">data =</span> data_stop_isty, <span class="at">family =</span> <span class="fu">gaussian</span>())</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>predicted_values_GLM <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_general_lenear, <span class="at">newdata =</span> <span class="fu">na.omit</span>(data_stop_isty[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">9</span>)]))</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate r squared manually and then print the result</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((data_stop_isty<span class="sc">$</span>diff_GDP <span class="sc">-</span> <span class="fu">mean</span>(data_stop_isty<span class="sc">$</span>diff_GDP))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((data_stop_isty<span class="sc">$</span>diff_GDP <span class="sc">-</span> predicted_values_GLM)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (SSE <span class="sc">/</span> SST)</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"R squared is = "</span>, <span class="fu">round</span>(r_squared, <span class="at">digits =</span> <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R squared is = 0.27"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(model_general_lenear, <span class="at">type=</span><span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+========================================================
+                                 Dependent variable:    
+                             ---------------------------
+                                      diff_GDP          
+--------------------------------------------------------
+Compensation_of_Employees             -0.142***         
+                                       (0.033)          
+                                                        
+Consumption_of_Fixed_Capital          0.115***          
+                                       (0.030)          
+                                                        
+diff_Hired_lag4                       0.806***          
+                                       (0.254)          
+                                                        
+Constant                               -0.001           
+                                       (0.004)          
+                                                        
+--------------------------------------------------------
+Observations                             107            
+Log Likelihood                         205.985          
+Akaike Inf. Crit.                     -403.969          
+========================================================
+Note:                        *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(model_general_lenear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -403.9692</code></pre>
+</div>
+</div>
+<p>We will perform tests for heteroscedasticity and autocorrelation of the residuals for the glm to access the reliability of this model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(model_general_lenear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  model_general_lenear
+BP = 3.1872, df = 3, p-value = 0.3636</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dwtest</span>(model_general_lenear)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  model_general_lenear
+DW = 2.327, p-value = 0.9541
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(model_general_lenear<span class="sc">$</span>residuals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  model_general_lenear$residuals
+W = 0.9666, p-value = 0.008544</code></pre>
+</div>
+</div>
+<p>Based on the QQ plot, the residuals of the model appear to be approximately normal with the exception of some slight deviations in the tails of the distribution:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(model_general_lenear<span class="sc">$</span>residuals)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(model_general_lenear<span class="sc">$</span>residuals, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Since the pseudo r-squared is quite low in the gaussian model and the robust model, we can perform the Generalized additive model, with splain functions of the following type: <span class="math display">\[
+S(x) =
+\begin{cases}
+a_1 + b_1(x - x_1) + c_1(x - x_1)^2 + d_1(x - x_1)^3 &amp; \text{for } x_1 \leq x &lt; x_2 \\
+a_2 + b_2(x - x_2) + c_2(x - x_2)^2 + d_2(x - x_2)^3 &amp; \text{for } x_2 \leq x &lt; x_3 \\
+\vdots \\
+a_n + b_n(x - x_n) + c_n(x - x_n)^2 + d_n(x - x_n)^3 &amp; \text{for } x_{n-1} \leq x \leq x_n
+\end{cases}
+\]</span> To determine whether there are significant non-linear realtionships in the data, that are measured with “wigly” curves. The general form of GAM with splain is given by: <span class="math display">\[
+S(x)=\sum_{i=1}^N\alpha_i\phi_i(x)
+\]</span> Where <span class="math inline">\(\alpha_i\)</span> are the coefficients of the spline and <span class="math inline">\(\phi_i\)</span> are the basis functions. The approximation of such model will insure that the non-linear relationships in the, if any, are adequately captured by the model. The leftover unexplained variance will be attributed to factors outside the scope of this approximation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the package</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: nlme</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'nlme'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    collapse</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is mgcv 1.9-0. For overview type 'help("mgcv-package")'.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generalized Additive Model</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>model_gam <span class="ot">&lt;-</span> <span class="fu">gam</span>(diff_GDP <span class="sc">~</span> <span class="fu">s</span>(Compensation_of_Employees) <span class="sc">+</span> </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">s</span>(Consumption_of_Fixed_Capital) <span class="sc">+</span> </span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">s</span>(diff_Hired_lag4), </span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data_stop_isty, <span class="at">family =</span> <span class="fu">gaussian</span>())</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_gam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Family: gaussian 
+Link function: identity 
+
+Formula:
+diff_GDP ~ s(Compensation_of_Employees) + s(Consumption_of_Fixed_Capital) + 
+    s(diff_Hired_lag4)
+
+Parametric coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept) -0.002230   0.002723  -0.819    0.415
+
+Approximate significance of smooth terms:
+                                  edf Ref.df      F p-value    
+s(Compensation_of_Employees)    6.383  7.205 10.608 &lt; 2e-16 ***
+s(Consumption_of_Fixed_Capital) 8.772  8.947  7.533 &lt; 2e-16 ***
+s(diff_Hired_lag4)              3.647  4.527  3.412 0.00848 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.528   Deviance explained = 61.2%
+GCV = 0.00097367  Scale est. = 0.00079348  n = 107</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_gam, <span class="at">pages =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(model_gam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -440.5224</code></pre>
+</div>
+</div>
+<p>We provide a plot of the components of this gamma model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_gam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-15-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, we will derive the relative deviance explained by each parameter in the GAM model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>compensation<span class="ot">&lt;-</span> <span class="fu">gam</span>(diff_GDP <span class="sc">~</span> <span class="fu">s</span>(Compensation_of_Employees), </span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data_stop_isty, <span class="at">family =</span> <span class="fu">gaussian</span>())</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>employees<span class="ot">&lt;-</span><span class="fu">gam</span>(diff_GDP <span class="sc">~</span> <span class="fu">s</span>(diff_Hired_lag4), </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data_stop_isty, <span class="at">family =</span> <span class="fu">gaussian</span>())</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>capital<span class="ot">&lt;-</span><span class="fu">gam</span>(diff_GDP <span class="sc">~</span> <span class="fu">s</span>(Consumption_of_Fixed_Capital), </span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data_stop_isty, <span class="at">family =</span> <span class="fu">gaussian</span>())</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Deviance explained by the relative change in employed compensation:"</span>, <span class="fu">summary</span>(compensation)<span class="sc">$</span>dev.expl,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Deviance explained by the relative change in employed compensation: 0.08627241 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Deviance explained by relative change in employed:"</span>,<span class="fu">summary</span>(employees)<span class="sc">$</span>dev.expl, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Deviance explained by relative change in employed: 0.1319314 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Deviance explained by relative change in employed:"</span>,<span class="fu">summary</span>(capital)<span class="sc">$</span>dev.expl, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Deviance explained by relative change in employed: 0.0449725 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a vector of fitted values for this model to compare with the real data</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>predicted_values_GAM<span class="ot">&lt;-</span>model_gam<span class="sc">$</span>fitted.values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>From we can easily observe that the relative change of the employed persons explaines higher percentage of the deviance in GDP.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a plot for predicted values</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  predicted_values_GAM, </span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"l"</span>, </span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"blue"</span>, </span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Месеци след 1995 година"</span>, </span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Отн. изменения"</span>, </span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Прогнозирани vs. реални стойности в измененията на БВП"</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the actual values to the same plot</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(</span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>  data_stop_isty<span class="sc">$</span>diff_GDP, </span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">"black"</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend to differentiate between predicted and actual values</span></span>
+<span id="cb73-18"><a href="#cb73-18" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
+<span id="cb73-19"><a href="#cb73-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"topright"</span>, </span>
+<span id="cb73-20"><a href="#cb73-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Прогноза (GAM)"</span>, <span class="st">"Реални стойности"</span>), </span>
+<span id="cb73-21"><a href="#cb73-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"black"</span>), </span>
+<span id="cb73-22"><a href="#cb73-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">lty =</span> <span class="dv">1</span></span>
+<span id="cb73-23"><a href="#cb73-23" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Upon the statistical realization of the second mentioned in the beggining of the research paper we will mention the augmented Solow model, by beginning with the initial definition of the production function in the main Solow model: <span class="math display">\[
+Y=A\cdot F(K,Z\cdot N)
+\]</span> Where <span class="math inline">\(N\)</span> is the number of workers employed in the economy and Z is their productivity. <span class="math inline">\(K\)</span> represents the capital accumulation. Except for the technological progress every other parameter in the above equation is defined in a series of equatins: <span class="math display">\[
+K_t=I_t+(1-\delta)\cdot K_{t-1},
+\]</span> <span class="math display">\[
+𝑁_𝑡=(1+𝑛)\cdot 𝑁_{𝑡−1},
+\]</span> <span class="math display">\[
+𝑍_𝑡=(1+𝜔) \cdot 𝑍_{𝑡−1}
+\]</span> In this model, the parameter $ $ denotes the rate of improvement in labor productivity over time. The model posits that technological progress is continuously advancing, thereby amplifying the impact of the population parameter on GDP development. Specifically, $ $ captures the rate at which labor productivity enhances, reflecting ongoing technological advancements.The parameter $ n $ represents the rate of population growth. While $ n $ typically increases, it is projected to decline in Bulgaria due to the ongoing demographic crisis. This demographic shift alters the conventional expectations regarding population dynamics and their influence on GDP growth. For the purposes of this approximation we will assume that the combined term <span class="math inline">\((1+𝜔)(1+𝑛)\cdot 𝑍_{𝑡−1}𝑁_{𝑡−1}\)</span> is identically equal to the working population (employed + self-employed). We as well assume that the quantity <span class="math inline">\(K_t=I_t+(1-\delta)\cdot K_{t-1}\)</span> is equal to the “brute capital investments” as refered to by the National Statics institute.From here we have the following form of the equation: <span class="math display">\[
+Y(K_t,L_t)=AK_t^\alpha L_t^\beta
+\]</span> The log form of the equation above is given by: <span class="math display">\[
+\ln (Y_t)=\ln(A)+\alpha\cdot\ln(K_t)+\beta\cdot\ln(L_t)
+\]</span> Given the model specification, there may be issues related to the potential lack of stationarity and the presence of autocorrelation in the residuals of the regression model. To address these concerns, it is essential to examine whether the time series data for the variables in the model exhibit non-stationary behavior or if the residuals are auto-correlated.</p>
+<p>Non-stationarity can lead to unreliable estimates and misleading inferences, while autocorrelation in residuals can indicate that the model does not fully capture the dynamics of the data.</p>
+<p>To correct for these issues, we can apply the disintegration method. This approach involves transforming the variables to obtain their relative changes, which helps to mitigate problems associated with non-stationarity and autocorrelation. By focusing on the relative changes, we can enhance the robustness of the regression analysis and obtain more reliable estimates.To do this take the difference <span class="math inline">\(\Delta\)</span> on both sides of the last equation: <span class="math display">\[
+\Delta \underbrace{\ln (Y_t)}_{\ln\left(\frac{Y_t}{Y_{t-1}}\right)} = \ln(A)-\ln(A)+\alpha\cdot (\underbrace{\ln(K_t)-\ln(K_{t-1})}_{\ln\left(\frac{K_t}{K_{t-1}}\right)})+\beta\cdot(\underbrace{\ln(L_t)-\ln(L_{t-1})}_{\ln\left(\frac{L_t}{L_{t-1}}\right)})
+\]</span> To begin with the statistical analysis we first import the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>Second_model_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"Second_model_data.xlsx"</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Second_model_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 11
+  YEAR  GDP       Consumption Individual_consumption Capital_accumulation Export
+  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;                  &lt;dbl&gt;                &lt;dbl&gt;  &lt;dbl&gt;
+1 1995  59652.88…      53211.                 45858.                 529. 25596.
+2 1996  62758.05…      52017.                 46380.                 435. 33262.
+3 1997  53899.51…      35406.                 31464.                4293. 35622.
+4 1998  55941.83…      37019.                 31593.                7840. 29435.
+5 1999  51244.90…      38420.                 33297.                8680. 24219.
+6 2000  53595.62…      41274.                 35587.                9143. 20062.
+# ℹ 5 more variables: Import &lt;dbl&gt;, active &lt;dbl&gt;, Hired &lt;dbl&gt;,
+#   Self_hired &lt;dbl&gt;, EXP_cap_accumulation &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Now, we perform the necessary transformations of the variables to reach the form of the last equation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>({</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>GDP<span class="ot">&lt;-</span><span class="fu">log</span>(<span class="fu">as.numeric</span>(Second_model_data <span class="sc">$</span>GDP)<span class="sc">/</span><span class="fu">as.numeric</span>(<span class="fu">lag</span>(Second_model_data <span class="sc">$</span>GDP)))</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>Capital<span class="ot">&lt;-</span><span class="fu">log</span>(Second_model_data<span class="sc">$</span>Capital_accumulation<span class="sc">/</span><span class="fu">lag</span>(Second_model_data <span class="sc">$</span>Capital_accumulation))</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>Labor<span class="ot">&lt;-</span><span class="fu">log</span>(Second_model_data <span class="sc">$</span>active<span class="sc">/</span><span class="fu">lag</span>(Second_model_data <span class="sc">$</span>active))</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"GDP"</span><span class="ot">=</span>GDP,</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Capital"</span><span class="ot">=</span>Capital,</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Labor"</span><span class="ot">=</span>Labor</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">na.omit</span>(df)</span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Based on the newly acquired data we can now perform the OLS estimation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>model_CD<span class="ot">&lt;-</span><span class="fu">lm</span>(GDP<span class="sc">~</span>Capital<span class="sc">+</span>Labor, <span class="at">data=</span>df)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(model_CD, <span class="at">type=</span><span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                                GDP            
+-----------------------------------------------
+Capital                      -0.048***         
+                              (0.013)          
+                                               
+Labor                        1.367***          
+                              (0.267)          
+                                               
+Constant                     0.029***          
+                              (0.006)          
+                                               
+-----------------------------------------------
+Observations                    28             
+R2                             0.657           
+Adjusted R2                    0.629           
+Residual Std. Error       0.030 (df = 25)      
+F Statistic           23.932*** (df = 2; 25)   
+===============================================
+Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p>We need to perform some additional test to insure the reliability of the data, mainly stationarity tests and tests for autocorrelation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ADF tests:</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>test<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">adf.test</span>(<span class="fu">na.omit</span>(df<span class="sc">$</span>GDP),<span class="at">k=</span><span class="dv">3</span>)</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>test<span class="fl">.2</span><span class="ot">&lt;-</span><span class="fu">adf.test</span>(<span class="fu">na.omit</span>(df<span class="sc">$</span>Capital), <span class="at">k=</span><span class="dv">1</span>)</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>test<span class="fl">.3</span><span class="ot">&lt;-</span><span class="fu">adf.test</span>(<span class="fu">na.omit</span>(df<span class="sc">$</span>Labor),<span class="at">k=</span><span class="dv">3</span>)</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"1. GDP</span><span class="sc">\n</span><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. GDP</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Dickey-Fuller Statistic: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.1</span><span class="sc">$</span>statistic))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Dickey-Fuller Statistic: -3.4992</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - p-value: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.1</span><span class="sc">$</span>p.value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - p-value: 0.0630</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Number of Lags: %d</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.1</span><span class="sc">$</span>parameter))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Number of Lags: 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Alternative Hypothesis: %s</span><span class="sc">\n\n</span><span class="st">"</span>, test<span class="fl">.1</span><span class="sc">$</span>alternative))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Alternative Hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">rep</span>(<span class="st">"-"</span>,<span class="dv">15</span>),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- - - - - - - - - - - - - - - </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"2. Capital</span><span class="sc">\n</span><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2. Capital</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Dickey-Fuller Statistic: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.2</span><span class="sc">$</span>statistic))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Dickey-Fuller Statistic: -10.5188</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - p-value: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.2</span><span class="sc">$</span>p.value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - p-value: 0.0100</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Number of Lags: %d</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.2</span><span class="sc">$</span>parameter))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Number of Lags: 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"   - Alternative Hypothesis: %s</span><span class="sc">\n\n</span><span class="st">"</span>, test<span class="fl">.2</span><span class="sc">$</span>alternative))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   - Alternative Hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">rep</span>(<span class="st">"-"</span>,<span class="dv">15</span>),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- - - - - - - - - - - - - - - </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"3. Labor</span><span class="sc">\n</span><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3. Labor</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">" - Dickey-Fuller Statistic: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.3</span><span class="sc">$</span>statistic))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - Dickey-Fuller Statistic: -3.6740</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">" - p-value: %.4f</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.3</span><span class="sc">$</span>p.value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - p-value: 0.0441</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">" - Number of Lags: %d</span><span class="sc">\n</span><span class="st">"</span>, test<span class="fl">.3</span><span class="sc">$</span>parameter))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - Number of Lags: 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">" - Alternative Hypothesis: %s</span><span class="sc">\n\n</span><span class="st">"</span>, test<span class="fl">.3</span><span class="sc">$</span>alternative))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - Alternative Hypothesis: stationary</code></pre>
+</div>
+</div>
+<p>The results however point towards the idea that the series are not stationary in the 95% confidence interval, however all of them appear to be stationary in the 90% confidence interval. Regardless of the discovered lack of stationarity the final model appears to be reasonable and except the heteroscedasticity no correlation had been discovered. GDP appears to be highly correlated with both variables but the variables themselves are not correlated, ruling out the possibility of multicolinearity. The tests are given here:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(model_CD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  model_CD
+BP = 9.4826, df = 2, p-value = 0.008727</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dwtest</span>(model_CD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  model_CD
+DW = 2.5172, p-value = 0.8928
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(model_CD)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Capital    Labor 
+1.033143 1.033143 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(model_CD))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  residuals(model_CD)
+W = 0.97221, p-value = 0.6409</code></pre>
+</div>
+</div>
+<p>The test detects possible hetersocedasticity but the residuals appear to be normally distributed and not autocorrelated. Heteroscedasticity causes most problems in the estimation of standard errors, so we will provide standard errors that account for heteroscedastic behavior by estimating the variance-covariance matrix, that is given below:</p>
+<p><span class="math display">\[
+\text{Var}(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^\top \mathbf{X})^{-1} \left( \mathbf{X}^\top \mathbf{\Omega} \mathbf{X} \right) (\mathbf{X}^\top \mathbf{X})^{-1}
+\]</span> where:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{X}\)</span> is the matrix of independent variables.</li>
+<li><span class="math inline">\(\mathbf{\Omega}\)</span> is a diagonal matrix with the squared residuals as its diagonal elements, representing heteroscedasticity.</li>
+<li><span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span> is the vector of OLS estimates.</li>
+<li><span class="math inline">\(\text{Var}(\hat{\boldsymbol{\beta}})\)</span> is the heteroscedasticity-consistent covariance matrix of <span class="math inline">\(\hat{\boldsymbol{\beta}}\)</span>.</li>
+</ul>
+<p>The procedure is readily given below and the standard errors as well as p-values estimated:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heteroscedasticity-consistent standard errors (Huber-White)</span></span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>robust_se <span class="ot">&lt;-</span> <span class="fu">vcovHC</span>(model_CD, <span class="at">type =</span> <span class="st">"HC"</span>)</span>
+<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use robust standard errors in model summaries</span></span>
+<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(model_CD, <span class="at">vcov =</span> robust_se)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+              Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept)  0.0289760  0.0058109  4.9865 3.860e-05 ***
+Capital     -0.0479410  0.0134683 -3.5595   0.00152 ** 
+Labor        1.3668274  0.2701656  5.0592 3.198e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>As seen from the table above all variables appear to still be statistically significant.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(model1_nohetero,</span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>model1_hetero,</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>model_CD,robust_model, <span class="at">type=</span><span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===================================================================================================================
+                                                              Dependent variable:                                  
+                             --------------------------------------------------------------------------------------
+                                                diff_GDP                             GDP               diff_GDP    
+                                                  OLS                                OLS                robust     
+                                                                                                        linear     
+                                       (1)                    (2)                    (3)                 (4)       
+-------------------------------------------------------------------------------------------------------------------
+Compensation_of_Employees           -0.142***              -0.135***                                  -0.074***    
+                                     (0.033)                (0.033)                                    (0.023)     
+                                                                                                                   
+Consumption_of_Fixed_Capital        0.115***                0.131***                                    0.041*     
+                                     (0.030)                (0.031)                                    (0.021)     
+                                                                                                                   
+diff_Hired_lag4                     0.806***                0.737***                                   0.528***    
+                                     (0.254)                (0.260)                                    (0.179)     
+                                                                                                                   
+time                                                        -0.025**                                               
+                                                            (0.012)                                                
+                                                                                                                   
+time2                                                        -0.012                                                
+                                                            (0.019)                                                
+                                                                                                                   
+Capital                                                                           -0.048***                        
+                                                                                   (0.013)                         
+                                                                                                                   
+Labor                                                                              1.367***                        
+                                                                                   (0.267)                         
+                                                                                                                   
+Constant                             -0.001                  0.002                 0.029***             -0.001     
+                                     (0.004)                (0.004)                (0.006)             (0.003)     
+                                                                                                                   
+-------------------------------------------------------------------------------------------------------------------
+Observations                           107                    107                     28                 107       
+R2                                    0.266                  0.299                  0.657                          
+Adjusted R2                           0.244                  0.264                  0.629                          
+Residual Std. Error             0.036 (df = 103)        0.035 (df = 101)       0.030 (df = 25)     0.023 (df = 103)
+F Statistic                  12.423*** (df = 3; 103) 8.608*** (df = 5; 101) 23.932*** (df = 2; 25)                 
+===================================================================================================================
+Note:                                                                                   *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p>Test for multicolinearity:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"model 1: "</span>, <span class="fu">vif</span>(model1_nohetero), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>model 1:  3.473655 3.334217 1.077022 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"model 2: "</span>, <span class="fu">vif</span>(model_CD),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>model 2:  1.033143 1.033143 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"model 3: "</span>, <span class="fu">vif</span>(robust_model),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>model 3:  3.473655 3.334217 1.077022 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"model 4: "</span>, <span class="fu">vif</span>(model1_hetero),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>model 4:  3.579068 3.52153 1.163882 1.447651 1.087335 </code></pre>
+</div>
+</div>
+</section>
+<section id="bulgaria-in-the-period-between-1888-and-1947-kingdom-of-bulgaria" class="level1">
+<h1>Bulgaria in the period between 1888 and 1947 (Kingdom of Bulgaria)</h1>
+<p>The data has already been prepared in excel, so we just export it from the relative directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data.xlsx"</span>)</span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+   Year Population Born_alive `Брутен вътрешен продукт` Working_population
+  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;                     &lt;dbl&gt;              &lt;dbl&gt;
+1  1888    3154375    117272                       41.9                 NA
+2  1889    3185041     40426.                      40.0                 NA
+3  1890    3216005     44918                       39.0                 NA
+4  1891    3247269     46970.                      43.4                 NA
+5  1892    3278838     49022.                      43.4                 NA
+6  1893    3310713     51075.                      41.8                 NA
+# ℹ 8 more variables: literate_population &lt;dbl&gt;,
+#   `Относителни изменения в БВП` &lt;dbl&gt;,
+#   `Относителни изменения в населението` &lt;dbl&gt;,
+#   GDP_Martin_approx_abs_val &lt;dbl&gt;, Кризи &lt;dbl&gt;, ...11 &lt;chr&gt;,
+#   `Население/100000` &lt;dbl&gt;, `Естествен прираст/10000` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>We will perform the procedure of differencing with one lag on every variable in our data, following the formula:</p>
+<p><span class="math display">\[
+\Delta_{\text{lag=1}}X_t=\frac{X_{t}-X_{t-1}}{X_{t-1}}
+\]</span></p>
+<p>Before that we perform some initial cleaning of the excel spreadsheet, to remove any redundant excel object that is not recognized by R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)[<span class="dv">4</span>]<span class="ot">&lt;-</span><span class="st">"GDP"</span></span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span>data[,<span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))]</span>
+<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="co">#after the clean up we produce a correlation plot to visualize time dependencies:</span></span>
+<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cor.plot</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure all relevant columns are numeric and clean potential non-numeric values</span></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">GDP =</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(GDP)),</span>
+<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Born_alive =</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(Born_alive)),</span>
+<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Population =</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(Population))</span>
+<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate growth rates and handle NAs where appropriate</span></span>
+<span id="cb140-12"><a href="#cb140-12" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb140-13"><a href="#cb140-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb140-14"><a href="#cb140-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">GDP_growth =</span> (GDP <span class="sc">-</span> <span class="fu">lag</span>(GDP)) <span class="sc">/</span> <span class="fu">lag</span>(GDP),</span>
+<span id="cb140-15"><a href="#cb140-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Birth_rate_growth =</span> (Born_alive <span class="sc">-</span> <span class="fu">lag</span>(Born_alive)) <span class="sc">/</span> <span class="fu">lag</span>(Born_alive),</span>
+<span id="cb140-16"><a href="#cb140-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Birth_rate =</span> Born_alive,</span>
+<span id="cb140-17"><a href="#cb140-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Population_growth =</span> (Population <span class="sc">-</span> <span class="fu">lag</span>(Population)) <span class="sc">/</span> <span class="fu">lag</span>(Population)</span>
+<span id="cb140-18"><a href="#cb140-18" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb140-19"><a href="#cb140-19" aria-hidden="true" tabindex="-1"></a>new_data<span class="ot">&lt;-</span>new_data[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)]</span>
+<span id="cb140-20"><a href="#cb140-20" aria-hidden="true" tabindex="-1"></a>new_data[<span class="fu">is.na</span>(new_data)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb140-21"><a href="#cb140-21" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(new_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 56 × 5
+    Year GDP_growth Birth_rate_growth Birth_rate Population_growth
+   &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1  1888   0                   0         117272            0      
+ 2  1889  -0.0457             -0.655      40426.           0.00972
+ 3  1890  -0.0259              0.111      44918            0.00972
+ 4  1891   0.113               0.0457     46970.           0.00972
+ 5  1892   0.000724            0.0437     49022.           0.00972
+ 6  1893  -0.0379              0.0419     51075.           0.00972
+ 7  1894   0.00625             0.0402     53127.           0.0155 
+ 8  1895   0.00321             0.0193     54153.           0.0155 
+ 9  1896   0.0698              0.0189     55179            0.0155 
+10  1897  -0.0640              0.0783     59497            0.0155 
+# ℹ 46 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cor.plot</span>(new_data) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the ADF tests</span></span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>adf_gdp <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(new_data<span class="sc">$</span>GDP_growth)</span>
+<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a>adf_pop <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(new_data<span class="sc">$</span>Population_growth,<span class="at">k=</span><span class="dv">3</span>)</span>
+<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a>adf_birth <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(new_data<span class="sc">$</span>Birth_rate_growth,<span class="at">k=</span><span class="dv">1</span>)</span>
+<span id="cb143-6"><a href="#cb143-6" aria-hidden="true" tabindex="-1"></a>adf_birth2 <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(new_data<span class="sc">$</span>Birth_rate)</span>
+<span id="cb143-7"><a href="#cb143-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_gdp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  new_data$GDP_growth
+Dickey-Fuller = -4.0402, Lag order = 3, p-value = 0.01428
+alternative hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  new_data$Population_growth
+Dickey-Fuller = -3.8213, Lag order = 3, p-value = 0.02377
+alternative hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_birth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  new_data$Birth_rate_growth
+Dickey-Fuller = -4.4954, Lag order = 1, p-value = 0.01
+alternative hypothesis: stationary</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf_birth2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Augmented Dickey-Fuller Test
+
+data:  new_data$Birth_rate
+Dickey-Fuller = -2.9812, Lag order = 3, p-value = 0.179
+alternative hypothesis: stationary</code></pre>
+</div>
+</div>
+<p>Further evidence for the stationary character of the processes is given by the autocorrelation plots:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(new_data<span class="sc">$</span>GDP_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(new_data<span class="sc">$</span>Birth_rate_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(new_data<span class="sc">$</span>Population_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">acf</span>(new_data<span class="sc">$</span>Birth_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(new_data<span class="sc">$</span>GDP_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(new_data<span class="sc">$</span>Birth_rate_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(new_data<span class="sc">$</span>Population_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-7.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(new_data<span class="sc">$</span>Birth_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-30-8.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From where we can easily observe that only one difference was enough to insure the removal of any non-stationary process. This procedure allows us to asses the connections between GDP and the population growth by utilizing a correlation matrix:</p>
+<p>From the correlation plot we observe a very small correlation between the population change (partially due to the approximation algorithms used by the national statistics institute). Now we will create dummy variable to account for the wars and economic crisis that Bulgaria have been facing during the period between 1888 to 1947:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>wars<span class="ot">&lt;-</span><span class="fu">array</span>()</span>
+<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;</span> <span class="dv">57</span>) {</span>
+<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">21</span> <span class="sc">&amp;&amp;</span> i <span class="sc">&lt;</span> <span class="dv">25</span>) {</span>
+<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a>    wars[i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb159-6"><a href="#cb159-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb159-7"><a href="#cb159-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">24</span> <span class="sc">&amp;&amp;</span> i <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
+<span id="cb159-8"><a href="#cb159-8" aria-hidden="true" tabindex="-1"></a>    wars[i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb159-9"><a href="#cb159-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb159-10"><a href="#cb159-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">49</span> <span class="sc">&amp;&amp;</span> i <span class="sc">&lt;</span> <span class="dv">56</span>) {</span>
+<span id="cb159-11"><a href="#cb159-11" aria-hidden="true" tabindex="-1"></a>    wars[i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb159-12"><a href="#cb159-12" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> wars[i]<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb159-13"><a href="#cb159-13" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">=</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb159-14"><a href="#cb159-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb159-15"><a href="#cb159-15" aria-hidden="true" tabindex="-1"></a>new_data<span class="sc">$</span>wars<span class="ot">&lt;-</span>wars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Lets recreate the correlation table with our new variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>({</span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corPlot</span>(new_data, <span class="at">main=</span><span class="st">"Корелограма на взаимовръзката между войните, БВП и населението"</span>)</span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'psych'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:car':
+
+    logit</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="1920"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grangertest</span>(new_data<span class="sc">$</span>GDP_growth<span class="sc">~</span>new_data<span class="sc">$</span>Birth_rate_growth, <span class="at">order=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Granger causality test
+
+Model 1: new_data$GDP_growth ~ Lags(new_data$GDP_growth, 1:6) + Lags(new_data$Birth_rate_growth, 1:6)
+Model 2: new_data$GDP_growth ~ Lags(new_data$GDP_growth, 1:6)
+  Res.Df Df      F  Pr(&gt;F)  
+1     37                    
+2     43 -6 2.6639 0.02998 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grangertest</span>(new_data<span class="sc">$</span>GDP_growth<span class="sc">~</span>new_data<span class="sc">$</span>Population_growth, <span class="at">order=</span><span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Granger causality test
+
+Model 1: new_data$GDP_growth ~ Lags(new_data$GDP_growth, 1:8) + Lags(new_data$Population_growth, 1:8)
+Model 2: new_data$GDP_growth ~ Lags(new_data$GDP_growth, 1:8)
+  Res.Df Df      F  Pr(&gt;F)  
+1     31                    
+2     39 -8 2.5703 0.02812 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>lagged_data <span class="ot">&lt;-</span> new_data <span class="sc">%&gt;%</span></span>
+<span id="cb167-2"><a href="#cb167-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb167-3"><a href="#cb167-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">G=</span>GDP_growth,</span>
+<span id="cb167-4"><a href="#cb167-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">G1 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">1</span>),</span>
+<span id="cb167-5"><a href="#cb167-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">G2 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">2</span>),</span>
+<span id="cb167-6"><a href="#cb167-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">G3 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">3</span>),</span>
+<span id="cb167-7"><a href="#cb167-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">G4 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">4</span>),</span>
+<span id="cb167-8"><a href="#cb167-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">G5 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">5</span>),</span>
+<span id="cb167-9"><a href="#cb167-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">G6 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">6</span>),</span>
+<span id="cb167-10"><a href="#cb167-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">G7 =</span> <span class="fu">lag</span>(GDP_growth, <span class="dv">7</span>),</span>
+<span id="cb167-11"><a href="#cb167-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb167-12"><a href="#cb167-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">B1 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">1</span>),</span>
+<span id="cb167-13"><a href="#cb167-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">B2 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">2</span>),</span>
+<span id="cb167-14"><a href="#cb167-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">B3 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">3</span>),</span>
+<span id="cb167-15"><a href="#cb167-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">B4 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">4</span>),</span>
+<span id="cb167-16"><a href="#cb167-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">B5 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">5</span>),</span>
+<span id="cb167-17"><a href="#cb167-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">B6 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">6</span>),</span>
+<span id="cb167-18"><a href="#cb167-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">B7 =</span> <span class="fu">lag</span>(Birth_rate_growth, <span class="dv">7</span>),</span>
+<span id="cb167-19"><a href="#cb167-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb167-20"><a href="#cb167-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">P1 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">1</span>),</span>
+<span id="cb167-21"><a href="#cb167-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">P2 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">2</span>),</span>
+<span id="cb167-22"><a href="#cb167-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">P3 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">3</span>),</span>
+<span id="cb167-23"><a href="#cb167-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">P4 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">4</span>),</span>
+<span id="cb167-24"><a href="#cb167-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">P5 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">5</span>),</span>
+<span id="cb167-25"><a href="#cb167-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">P6 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">6</span>),</span>
+<span id="cb167-26"><a href="#cb167-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">P7 =</span> <span class="fu">lag</span>(Population_growth, <span class="dv">7</span>)</span>
+<span id="cb167-27"><a href="#cb167-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb167-28"><a href="#cb167-28" aria-hidden="true" tabindex="-1"></a>lagged_data<span class="ot">&lt;-</span>lagged_data[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span>
+<span id="cb167-29"><a href="#cb167-29" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cor.plot</span>(lagged_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bulgaria-in-the-period-between-1945-and-1989-the-socialists-regime" class="level1">
+<h1>Bulgaria in the period between 1945 and 1989 (the socialists regime)</h1>
+<p>First export the data from excel and visualize the head to insure adequacy:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"1944-1989"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...14`
+• `` -&gt; `...15`
+• `` -&gt; `...16`
+• `` -&gt; `...17`
+• `` -&gt; `...18`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 18
+   Year Capital_investments Population All_employed Workers   GSP   GNP
+  &lt;dbl&gt;               &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  1947                289.    7098000      566284. 327568.  40    55  
+2  1948                325.    7162200      629204  361954   49.0  56.5
+3  1949                365.    7227900      778744  411014.  55.2  61.3
+4  1950                371.    7273100      805928  460073   61.3  66.7
+5  1951                464.    7243200      901877  519106.  67.4  72.0
+6  1952                549     7306700     1016008  578138   73.6  77.9
+# ℹ 11 more variables: `Капиталови вложения (млн)` &lt;dbl&gt;,
+#   `Съвкупен обществен продукт` &lt;dbl&gt;, `Брутен национален доход` &lt;dbl&gt;,
+#   `Всички заети (млн)` &lt;dbl&gt;, `Работници (млн)` &lt;dbl&gt;,
+#   `Население (млн)` &lt;dbl&gt;, ...14 &lt;dbl&gt;, ...15 &lt;chr&gt;, ...16 &lt;dbl&gt;,
+#   ...17 &lt;chr&gt;, ...18 &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Now we will create a separate data frame containing only the relevant parameters and clean the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>Data<span class="ot">&lt;-</span>data[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)]</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    vars  n       mean         sd     median    trimmed
+Year                   1 42    1967.50      12.27    1967.50    1967.50
+Capital_investments    2 42    3691.35    3131.03    3067.05    3391.56
+Population             3 42 8239559.74  630212.02 8369600.00 8277341.44
+All_employed           4 42 2548229.99 1245985.75 2538090.00 2583096.12
+Workers                5 42 1581659.65  807486.52 1604018.00 1599722.51
+GSP                    6 42     406.98     317.70     321.00     382.62
+GNP                    7 42     354.15     265.92     272.50     332.17
+                           mad        min       max      range  skew kurtosis
+Year                     15.57    1947.00    1988.0      41.00  0.00    -1.29
+Capital_investments    3585.74     289.27   10288.1    9998.83  0.61    -1.01
+Population           773175.90 7098000.00 8986600.0 1888600.00 -0.40    -1.33
+All_employed        1957215.10  566283.60 4113546.0 3547262.40 -0.05    -1.55
+Workers             1294235.67  327568.37 2629693.0 2302124.63 -0.06    -1.54
+GSP                     345.47      40.00    1000.0     960.00  0.50    -1.23
+GNP                     264.30      55.00     882.0     827.00  0.56    -1.14
+                           se
+Year                     1.89
+Capital_investments    483.13
+Population           97243.83
+All_employed        192259.78
+Workers             124597.88
+GSP                     49.02
+GNP                     41.03</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb174-2"><a href="#cb174-2" aria-hidden="true" tabindex="-1"></a>Data <span class="ot">&lt;-</span> Data <span class="sc">%&gt;%</span></span>
+<span id="cb174-3"><a href="#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb174-4"><a href="#cb174-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">capital_diff =</span> (Capital_investments <span class="sc">-</span> <span class="fu">lag</span>(Capital_investments)) <span class="sc">/</span> <span class="fu">lag</span>(Capital_investments),</span>
+<span id="cb174-5"><a href="#cb174-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Population_diff=</span>(Population<span class="sc">-</span><span class="fu">lag</span>(Population))<span class="sc">/</span><span class="fu">lag</span>(Population),</span>
+<span id="cb174-6"><a href="#cb174-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">All_employed_diff=</span>(All_employed<span class="sc">-</span><span class="fu">lag</span>(All_employed))<span class="sc">/</span><span class="fu">lag</span>(All_employed),</span>
+<span id="cb174-7"><a href="#cb174-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Workers_diff=</span>(Workers<span class="sc">-</span><span class="fu">lag</span>(Workers))<span class="sc">/</span><span class="fu">lag</span>(Workers),</span>
+<span id="cb174-8"><a href="#cb174-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">GSP_diff=</span>(GSP<span class="sc">-</span><span class="fu">lag</span>(GSP))<span class="sc">/</span><span class="fu">lag</span>(GSP),</span>
+<span id="cb174-9"><a href="#cb174-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">GNP_diff=</span>(GNP<span class="sc">-</span><span class="fu">lag</span>(GNP))<span class="sc">/</span><span class="fu">lag</span>(GNP),</span>
+<span id="cb174-10"><a href="#cb174-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>Data<span class="ot">&lt;-</span><span class="fu">na.omit</span>(Data[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)])</span>
+<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cor.plot</span>(Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'kableExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    group_rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>perform_adf_test <span class="ot">&lt;-</span> <span class="cf">function</span>(series_name, series_data) {</span>
+<span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(<span class="fu">na.omit</span>(series_data)) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb179-3"><a href="#cb179-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">paste</span>(<span class="st">"Warning: No valid data for series"</span>, series_name))</span>
+<span id="cb179-4"><a href="#cb179-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">Series =</span> series_name, <span class="at">p_value =</span> <span class="cn">NA</span>, <span class="at">Statistic =</span> <span class="cn">NA</span>))</span>
+<span id="cb179-5"><a href="#cb179-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb179-6"><a href="#cb179-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb179-7"><a href="#cb179-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(<span class="fu">adf.test</span>(series_data), <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb179-8"><a href="#cb179-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">paste</span>(<span class="st">"Error running ADF test for series"</span>, series_name, <span class="st">":"</span>, e<span class="sc">$</span>message))</span>
+<span id="cb179-9"><a href="#cb179-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb179-10"><a href="#cb179-10" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb179-11"><a href="#cb179-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(result)) {</span>
+<span id="cb179-12"><a href="#cb179-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">data.frame</span>(<span class="at">Series =</span> series_name, <span class="at">p_value =</span> <span class="cn">NA</span>, <span class="at">Statistic =</span> <span class="cn">NA</span>))</span>
+<span id="cb179-13"><a href="#cb179-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb179-14"><a href="#cb179-14" aria-hidden="true" tabindex="-1"></a>  critical_values <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.null</span>(result<span class="sc">$</span>critical.values), result<span class="sc">$</span>critical.values, <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">3</span>))</span>
+<span id="cb179-15"><a href="#cb179-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb179-16"><a href="#cb179-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb179-17"><a href="#cb179-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Series =</span> series_name,</span>
+<span id="cb179-18"><a href="#cb179-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> result<span class="sc">$</span>p.value,</span>
+<span id="cb179-19"><a href="#cb179-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Statistic =</span> result<span class="sc">$</span>statistic</span>
+<span id="cb179-20"><a href="#cb179-20" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb179-21"><a href="#cb179-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb179-22"><a href="#cb179-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb179-23"><a href="#cb179-23" aria-hidden="true" tabindex="-1"></a>series_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Capital Diff"</span>, <span class="st">"All Employed Diff"</span>, <span class="st">"Workers Diff"</span>, <span class="st">"Population Diff"</span>, <span class="st">"GSP Diff"</span>, <span class="st">"GNP Diff"</span>)</span>
+<span id="cb179-24"><a href="#cb179-24" aria-hidden="true" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">list</span>(Data<span class="sc">$</span>capital_diff, Data<span class="sc">$</span>All_employed_diff, Data<span class="sc">$</span>Workers_diff, Data<span class="sc">$</span>Population_diff, Data<span class="sc">$</span>GSP_diff, Data<span class="sc">$</span>GNP_diff)</span>
+<span id="cb179-25"><a href="#cb179-25" aria-hidden="true" tabindex="-1"></a>adf_results <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(<span class="fu">mapply</span>(perform_adf_test, series_list, data_list, <span class="at">SIMPLIFY =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb179-26"><a href="#cb179-26" aria-hidden="true" tabindex="-1"></a>adf<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb179-27"><a href="#cb179-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Series=</span>adf_results<span class="sc">$</span>Series,</span>
+<span id="cb179-28"><a href="#cb179-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">p_value=</span>adf_results<span class="sc">$</span>p_value,</span>
+<span id="cb179-29"><a href="#cb179-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Statistic=</span>adf_results<span class="sc">$</span>Statistic</span>
+<span id="cb179-30"><a href="#cb179-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb179-31"><a href="#cb179-31" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(adf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Series    p_value Statistic
+1      Capital Diff 0.01000000 -4.395991
+2 All Employed Diff 0.01000000 -4.784885
+3      Workers Diff 0.01230737 -4.183239
+4   Population Diff 0.01000000 -6.208160
+5          GSP Diff 0.03841996 -3.688225
+6          GNP Diff 0.01106595 -4.214854</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary library</span></span>
+<span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-4"><a href="#cb181-4" aria-hidden="true" tabindex="-1"></a>tests <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb181-5"><a href="#cb181-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GNP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"capital_diff"</span>, <span class="at">order =</span> <span class="dv">1</span>),</span>
+<span id="cb181-6"><a href="#cb181-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GSP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"capital_diff"</span>, <span class="at">order =</span> <span class="dv">3</span>),</span>
+<span id="cb181-7"><a href="#cb181-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GNP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"Workers_diff"</span>, <span class="at">order =</span> <span class="dv">1</span>),</span>
+<span id="cb181-8"><a href="#cb181-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GSP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"Workers_diff"</span>, <span class="at">order =</span> <span class="dv">1</span>),</span>
+<span id="cb181-9"><a href="#cb181-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GNP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"Population_diff"</span>, <span class="at">order =</span> <span class="dv">5</span>),</span>
+<span id="cb181-10"><a href="#cb181-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GSP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"Population_diff"</span>, <span class="at">order =</span> <span class="dv">5</span>),</span>
+<span id="cb181-11"><a href="#cb181-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GNP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"All_employed_diff"</span>, <span class="at">order =</span> <span class="dv">1</span>),</span>
+<span id="cb181-12"><a href="#cb181-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">dep_var =</span> <span class="st">"GSP_diff"</span>, <span class="at">ind_var =</span> <span class="st">"All_employed_diff"</span>, <span class="at">order =</span> <span class="dv">1</span>)</span>
+<span id="cb181-13"><a href="#cb181-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb181-14"><a href="#cb181-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-15"><a href="#cb181-15" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Test_No =</span> <span class="fu">integer</span>(),</span>
+<span id="cb181-16"><a href="#cb181-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Dependent_Variable =</span> <span class="fu">character</span>(),</span>
+<span id="cb181-17"><a href="#cb181-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Independent_Variable =</span> <span class="fu">character</span>(),</span>
+<span id="cb181-18"><a href="#cb181-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Order =</span> <span class="fu">integer</span>(),</span>
+<span id="cb181-19"><a href="#cb181-19" aria-hidden="true" tabindex="-1"></a>                      <span class="at">F_Statistic =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb181-20"><a href="#cb181-20" aria-hidden="true" tabindex="-1"></a>                      <span class="at">P_Value =</span> <span class="fu">numeric</span>(),</span>
+<span id="cb181-21"><a href="#cb181-21" aria-hidden="true" tabindex="-1"></a>                      <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb181-22"><a href="#cb181-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-23"><a href="#cb181-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(tests)) {</span>
+<span id="cb181-24"><a href="#cb181-24" aria-hidden="true" tabindex="-1"></a>  test <span class="ot">&lt;-</span> tests[[i]]</span>
+<span id="cb181-25"><a href="#cb181-25" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(<span class="fu">grangertest</span>(<span class="fu">as.formula</span>(<span class="fu">paste</span>(test<span class="sc">$</span>dep_var, <span class="st">"~"</span>, test<span class="sc">$</span>ind_var)), <span class="at">order =</span> test<span class="sc">$</span>order, <span class="at">data =</span> Data))</span>
+<span id="cb181-26"><a href="#cb181-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(result)) {</span>
+<span id="cb181-27"><a href="#cb181-27" aria-hidden="true" tabindex="-1"></a>    f_stat <span class="ot">&lt;-</span> result<span class="sc">$</span>F[<span class="dv">1</span>]</span>
+<span id="cb181-28"><a href="#cb181-28" aria-hidden="true" tabindex="-1"></a>    p_val <span class="ot">&lt;-</span> result<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>[<span class="dv">1</span>]</span>
+<span id="cb181-29"><a href="#cb181-29" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb181-30"><a href="#cb181-30" aria-hidden="true" tabindex="-1"></a>    f_stat <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb181-31"><a href="#cb181-31" aria-hidden="true" tabindex="-1"></a>    p_val <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb181-32"><a href="#cb181-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb181-33"><a href="#cb181-33" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">data.frame</span>(<span class="at">Test_No =</span> i,</span>
+<span id="cb181-34"><a href="#cb181-34" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">Dependent_Variable =</span> test<span class="sc">$</span>dep_var,</span>
+<span id="cb181-35"><a href="#cb181-35" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">Independent_Variable =</span> test<span class="sc">$</span>ind_var,</span>
+<span id="cb181-36"><a href="#cb181-36" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">Order =</span> test<span class="sc">$</span>order,</span>
+<span id="cb181-37"><a href="#cb181-37" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">F_Statistic =</span> f_stat,</span>
+<span id="cb181-38"><a href="#cb181-38" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">P_Value =</span> p_val))</span>
+<span id="cb181-39"><a href="#cb181-39" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb181-40"><a href="#cb181-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-41"><a href="#cb181-41" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Test_No Dependent_Variable Independent_Variable Order F_Statistic
+1       1           GNP_diff         capital_diff     1    3.291671
+2       2           GSP_diff         capital_diff     3    3.520108
+3       3           GNP_diff         Workers_diff     1    5.020131
+4       4           GSP_diff         Workers_diff     1    3.709367
+5       5           GNP_diff      Population_diff     5    7.851708
+6       6           GSP_diff      Population_diff     5    5.970673
+7       7           GNP_diff    All_employed_diff     1    4.611636
+8       8           GSP_diff    All_employed_diff     1    3.370518
+       P_Value
+1 0.0777473287
+2 0.0263963083
+3 0.0311434641
+4 0.0618179130
+5 0.0001472535
+6 0.0009145571
+7 0.0383746810
+8 0.0744192615</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ivreg)</span>
+<span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb183-4"><a href="#cb183-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb183-5"><a href="#cb183-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb183-6"><a href="#cb183-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb183-7"><a href="#cb183-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb183-8"><a href="#cb183-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear regression model</span></span>
+<span id="cb183-9"><a href="#cb183-9" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(GSP_diff <span class="sc">~</span> capital_diff <span class="sc">+</span> <span class="fu">lag</span>(Population_diff, <span class="dv">7</span>) <span class="sc">+</span> Workers_diff, <span class="at">data =</span> Data)</span>
+<span id="cb183-10"><a href="#cb183-10" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(GSP_diff <span class="sc">~</span> capital_diff  <span class="sc">+</span> Workers_diff, <span class="at">data =</span> Data)</span>
+<span id="cb183-11"><a href="#cb183-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Instrumental variables (IV) regression model</span></span>
+<span id="cb183-12"><a href="#cb183-12" aria-hidden="true" tabindex="-1"></a>modeliv <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(GSP_diff <span class="sc">~</span> Workers_diff <span class="sc">|</span> <span class="fu">lag</span>(Population_diff, <span class="dv">7</span>), <span class="at">data =</span> Data)</span>
+<span id="cb183-13"><a href="#cb183-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb183-14"><a href="#cb183-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of both models with stargazer</span></span>
+<span id="cb183-15"><a href="#cb183-15" aria-hidden="true" tabindex="-1"></a>stargazer<span class="sc">::</span><span class="fu">stargazer</span>(model,model2 , modeliv, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+=====================================================================================
+                                             Dependent variable:                     
+                        -------------------------------------------------------------
+                                                  GSP_diff                           
+                                             OLS                       instrumental  
+                                                                         variable    
+                                 (1)                    (2)                 (3)      
+-------------------------------------------------------------------------------------
+capital_diff                   0.142***                0.114*                        
+                               (0.042)                (0.062)                        
+                                                                                     
+lag(Population_diff, 7)         2.100*                                               
+                               (1.128)                                               
+                                                                                     
+Workers_diff                   0.356***               0.470***           0.778***    
+                               (0.100)                (0.122)             (0.226)    
+                                                                                     
+Constant                       0.033***               0.047***           0.042***    
+                               (0.008)                (0.008)             (0.010)    
+                                                                                     
+-------------------------------------------------------------------------------------
+Observations                      34                     41                 34       
+R2                              0.723                  0.487               0.546     
+Adjusted R2                     0.696                  0.460               0.532     
+Residual Std. Error        0.019 (df = 30)        0.032 (df = 38)     0.024 (df = 32)
+F Statistic             26.129*** (df = 3; 30) 18.057*** (df = 2; 38)                
+=====================================================================================
+Note:                                                     *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance Inflation Factor (VIF) for multicollinearity in the linear model</span></span>
+<span id="cb185-2"><a href="#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           capital_diff lag(Population_diff, 7)            Workers_diff 
+               1.546096                1.260887                1.840259 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>capital_diff Workers_diff 
+    1.400728     1.400728 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Breusch-Pagan test for heteroscedasticity in both models</span></span>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  model
+BP = 3.7685, df = 3, p-value = 0.2876</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb191"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(model2) <span class="co"># For the linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  model2
+BP = 1.4204, df = 2, p-value = 0.4915</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(modeliv)  <span class="co"># For the IV model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  modeliv
+BP = 8.3412, df = 1, p-value = 0.003876</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb195"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Breusch-Godfrey test for serial correlation in both models</span></span>
+<span id="cb195-2"><a href="#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bgtest</span>(model) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  model
+LM test = 1.9602, df = 1, p-value = 0.1615</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb197"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bgtest</span>(model2) <span class="co"># For the linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  model2
+LM test = 0.52992, df = 1, p-value = 0.4666</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bgtest</span>(modeliv)  <span class="co"># For the IV model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  modeliv
+LM test = 0.65951, df = 1, p-value = 0.4167</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb201"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shapiro-Wilk test for normality of residuals in both models</span></span>
+<span id="cb201-2"><a href="#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(model<span class="sc">$</span>residuals)    <span class="co"># For the linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.9566, p-value = 0.1932</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(modeliv<span class="sc">$</span>residuals)  <span class="co"># For the IV model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  modeliv$residuals
+W = 0.96106, p-value = 0.261</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb205"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial Autocorrelation Function (PACF) of residuals in both models</span></span>
+<span id="cb205-2"><a href="#cb205-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(model<span class="sc">$</span>residuals)    <span class="co"># For the linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb206"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pacf</span>(modeliv<span class="sc">$</span>residuals)  <span class="co"># For the IV model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Research_documentation_files/figure-html/unnamed-chunk-41-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb207"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Robust standard errors using heteroscedasticity-consistent (HC1) covariance matrix in the IV model</span></span>
+<span id="cb207-2"><a href="#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(modeliv, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(modeliv, <span class="at">type =</span> <span class="st">"HC1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.0420166  0.0076003  5.5283 4.27e-06 ***
+Workers_diff 0.7781545  0.2171247  3.5839 0.001109 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

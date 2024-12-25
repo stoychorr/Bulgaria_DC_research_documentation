@@ -50,7 +50,7 @@ data_stop_isty$diff_GDP <- c(rep(NA, 4), diff(data_stop_isty$GDP, lag = 4))
 #Load the main OLS model
 time<-array()
 i<-0
-while (i<=110){
+while (i<=111){
   if (i<=19){
     time[i]<-1
   } else {time[i]=0}
@@ -58,7 +58,7 @@ while (i<=110){
 }
 time2<-array()
 i <- 0
-while (i <= 110) {
+while (i <= 111) {
   if (i > 55 && i < 60) {
     time2[i] <- 1
   } else {
@@ -79,7 +79,7 @@ The graph of the differenced GDP is:
 
 ```{r}
 options(warn=-1)
-plot(seq(1:110),data_stop_isty$diff_GDP, type="l", main="Изменения на диференцираното БВП с два и четири лагови стойности.", xlab="Период в тримесечия", ylab="Изменения в БВП")
+plot(seq(1:111),data_stop_isty$diff_GDP, type="l", main="Изменения на диференцираното БВП с два и четири лагови стойности.", xlab="Период в тримесечия", ylab="Изменения в БВП")
 ```
 
 Perform ADF tests on the all variables to insure they fit the requirements of the Granger test and linear regression modelling (so are statinary):
@@ -232,7 +232,7 @@ $$ To determine whether there are significant non-linear realtionships in the da
 S(x)=\sum_{i=1}^N\alpha_i\phi_i(x)
 $$ Where $\alpha_i$ are the coefficients of the spline and $\phi_i$ are the basis functions. The approximation of such model will insure that the non-linear relationships in the, if any, are adequately captured by the model. The leftover unexplained variance will be attributed to factors outside the scope of this approximation.
 
-```{r fig.height=20, fig.width=20}
+```{r}
 # Load the package
 library(mgcv)
 
@@ -455,7 +455,6 @@ psych::cor.plot(data)
 
 ```
 
-
 ```{r}
 
 library(dplyr)
@@ -485,7 +484,6 @@ print(new_data)
 psych::cor.plot(new_data) 
 
 ```
-
 
 ```{r}
 # Perform the ADF tests
@@ -699,8 +697,6 @@ for (i in seq_along(tests)) {
 }
 
 print(results)
-
-
 ```
 
 ```{r}
@@ -713,22 +709,25 @@ library(sandwich)
 
 # Linear regression model
 model <- lm(GSP_diff ~ capital_diff + lag(Population_diff, 7) + Workers_diff, data = Data)
-
+model2 <- lm(GSP_diff ~ capital_diff  + Workers_diff, data = Data)
 # Instrumental variables (IV) regression model
 modeliv <- ivreg(GSP_diff ~ Workers_diff | lag(Population_diff, 7), data = Data)
 
 # Summary of both models with stargazer
-stargazer::stargazer(model, modeliv, type = "text")
+stargazer::stargazer(model,model2 , modeliv, type = "text")
 
 # Variance Inflation Factor (VIF) for multicollinearity in the linear model
 vif(model)
+vif(model2)
 
 # Breusch-Pagan test for heteroscedasticity in both models
-bptest(model)    # For the linear model
+bptest(model)
+bptest(model2) # For the linear model
 bptest(modeliv)  # For the IV model
 
 # Breusch-Godfrey test for serial correlation in both models
-bgtest(model)    # For the linear model
+bgtest(model) 
+bgtest(model2) # For the linear model
 bgtest(modeliv)  # For the IV model
 
 # Shapiro-Wilk test for normality of residuals in both models
